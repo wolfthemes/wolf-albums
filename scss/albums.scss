@@ -1,0 +1,273 @@
+@import "compass";
+
+.albums-container{
+	zoom: 1;
+	&:before, &:after { content: ""; display: table; }
+	&:after { clear: both; }
+	margin-top: 30px;
+	margin-bottom: 30px;
+
+	.filter-clear  {
+	  	zoom: 1;
+		&:before, &:after { content: ""; display: table; }
+		&:after { clear: both; }
+	}
+
+	#albums-filter-container { 
+		width:100%; 
+		padding:0 5px 0; 
+		height:auto; 
+		position:relative 
+
+	}
+
+	#albums-filter {
+		margin-bottom: 15px;
+		margin-top:0;
+		font-size:16px;
+		margin-left:15px;
+
+		li {
+			list-style-type: none!important;
+			display:inline;
+
+			a {
+				text-shadow:none ;
+				text-decoration: none;
+				@include transition(0.5s); 
+				display:inline; 
+				padding:4px 8px;
+				margin-right: 20px;	
+
+				&:hover{
+					opacity:1!important
+				}
+
+				&.active{
+					color:white!important; 
+					background: #404040;
+				}
+			}
+
+
+		}
+
+	}
+
+	.no-album{
+		text-align: center;
+	}
+}
+
+.albums, .shortcode-albums-grid {
+	padding: 0;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top:0; 
+	margin-bottom:30px;
+	width:100%;
+	line-height: 1.7;
+
+	zoom: 1;
+	&:before, &:after { content: ""; display: table; }
+	&:after { clear: both; }
+
+	.album-item-container{
+		position:relative;
+		margin: 0;
+		width:33.33%;
+		float: left; 
+		height:auto;
+		display: block;
+		padding: 0!important;
+		margin-top:15px;
+		margin-bottom:15px!important;
+		border-bottom:none!important;
+		
+		&:after{
+			display:none;
+		}
+
+	}
+
+	span.album-item{
+		display: block;
+		background:#333;
+		width:90%; height:95%; margin-left:5%;
+		position: relative;
+	}
+
+
+	.albums  .entry-link, #shortcode-albums-grid  .entry-link  {
+		display:block; 
+		text-shadow:none!important;
+		text-align:left;
+		color:#333!important
+	}
+
+
+	span.album-thumb { 
+		display: block;
+		width:100%;  
+		position:relative;
+		overflow: hidden;
+		-webkit-backface-visibility: hidden;
+
+		img, p{
+
+			@include transition(ease-out 0.2s);
+		}
+
+		h5{
+			margin-top: 0;
+			line-height: 1.5;
+			margin-bottom: 5px;
+			@include transition(ease-out 0.3s);
+			color:white!important;
+		}
+
+		img{
+			width:100%; height:auto;  
+			top:0;  
+			margin:0 auto; 
+			margin-bottom:0; 
+			vertical-align:bottom;
+			position: relative;
+			@include opacity(0.7);
+			padding:0;
+			
+		}
+
+		h5{
+			margin-top: 0!important;
+			@include opacity(0.5);
+		}
+
+		p{
+			font-size:15px;
+			line-height: 1;
+			margin-top:10px!important;
+			margin-bottom: 0!important;
+			font-weight: normal;
+			@include transition-delay(0.2s);
+			@include opacity(0);
+			-webkit-backface-visibility: hidden;
+		}
+
+		&:hover{
+			img{
+				top:100px; 
+				@include opacity(1);
+			}
+
+			h5{
+				@include opacity(1);
+			}
+
+			p{
+				@include opacity(1)
+			}
+		}
+
+
+	}
+
+
+	.album-title {
+		position:absolute;
+		top:15px; 
+		left:15px; 
+		width:90%; 
+		height:10%;
+		line-height:0px;
+		vertical-align: middle;
+		color:white;
+
+	}
+
+	span.album-overlay {
+		position:absolute; width:100%; height:100%; display:block; 
+	}
+
+	
+}
+
+.widget_last_photos{
+	a{
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+			&:after, &:before {
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box; }
+		
+		display: inline-block;
+		padding:0px 2px;
+		width: 50%;
+		img{
+			display: block;
+			vertical-align: bottom;
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+
+
+$cols : 12;
+$width: 100%;
+
+@for $i from 1 through $cols {
+	.album-grid-col-#{$i} .album-item-container{
+		width: ( $width/$i  ) ;
+	}
+}
+
+
+/* Isotope styles
+---------------------------------------*/
+.isotope,
+.isotope .isotope-item {
+	/* change duration value to whatever you like */
+	@include transition-duration(0.8s);
+}
+
+.isotope {
+	@include transition-property(height, width);
+}
+
+.isotope .isotope-item {
+	-webkit-transition-property: -webkit-transform, opacity;
+	-moz-transition-property:    -moz-transform, opacity;
+	-o-transition-property:         top, left, opacity;
+	transition-property:         transform, opacity;
+}
+
+.isotope-item {
+	z-index: 2;
+}
+
+.isotope-hidden.isotope-item {
+	pointer-events: none;
+	z-index: 1;
+}
+
+@media screen and (max-width: 1030px) {
+	
+	.album-grid-col-4 .album-item-container{
+		width: 50%;
+	}
+
+}
+
+@media screen and (max-width:500px) {
+	
+	@for $i from 1 through $cols {
+		.album-grid-col-#{$i} .album-item-container{
+			width: 100%;
+			float: none;
+		}
+	}
+
+}
