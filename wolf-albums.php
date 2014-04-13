@@ -163,7 +163,7 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 		 * Include required admin files.
 		 */
 		public function admin_includes() {
-			
+			// include admin files
 		}
 
 		/**
