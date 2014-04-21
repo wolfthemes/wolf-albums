@@ -3,11 +3,11 @@
  * Plugin Name: Wolf Albums
  * Plugin URI: http://wpwolf.com/plugin/wolf-albums
  * Description: A ready-to-use gallery custom post type with Isotope filter.
- * Version: 1.0.6
+ * Version: 1.0.7
  * Author: WpWolf
  * Author URI: http://wpwolf.com
  * Requires at least: 3.5
- * Tested up to: 3.8.1
+ * Tested up to: 3.9
  *
  * Text Domain: wolf
  * Domain Path: /lang/
@@ -51,7 +51,7 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 		/**
 		 * @var string
 		 */
-		public $version = '1.0.6';
+		public $version = '1.0.7';
 
 		/**
 		 * @var string
@@ -660,7 +660,7 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 
 			$loop = new WP_Query( $args );
 			if ( $loop->have_posts() ) : ?>
-				<ul class="shortcode-albums-grid album-grid-col-<?php echo intval( $count ); ?>">
+				<ul class="shortcode-albums-grid album-grid-col-<?php echo intval( $col ); ?>">
 					<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
 						<?php wolf_albums_get_template_part( 'content', 'album' ); ?>
