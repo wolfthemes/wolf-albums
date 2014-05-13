@@ -3,7 +3,7 @@
  * Plugin Name: Wolf Albums
  * Plugin URI: http://wpwolf.com/plugin/wolf-albums
  * Description: A ready-to-use gallery custom post type with Isotope filter.
- * Version: 1.0.7
+ * Version: 1.0.8
  * Author: WpWolf
  * Author URI: http://wpwolf.com
  * Requires at least: 3.5
@@ -51,7 +51,7 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 		/**
 		 * @var string
 		 */
-		public $version = '1.0.7';
+		public $version = '1.0.8';
 
 		/**
 		 * @var string
@@ -156,7 +156,6 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 
 			// Core functions
 			include_once( 'includes/core-functions.php' );
-
 		}
 
 		/**
@@ -174,7 +173,6 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 			// Functions
 			include_once( 'includes/hooks.php' ); // Template hooks used on the front-end
 			include_once( 'includes/functions.php' ); // Contains functions for various front-end events
-			
 		}
 
 		/**
@@ -187,7 +185,6 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 
 			// Register widgets
 			register_widget( 'WA_Widget_Last_Photos' );
-			
 		}
 
 		/**
@@ -196,7 +193,6 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 		public function include_template_functions() {
 			
 			include_once( 'includes/template.php' );
-
 		}
 
 		/**
@@ -268,11 +264,9 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 
 					echo $output;
 				}
-
 			}
 
 			return false;
-
 		}
 
 		/**
@@ -299,7 +293,6 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 
 			// register post type
 			$this->register_taxonomy();
-
 		}
 
 		/**
@@ -311,7 +304,6 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 			$locale = apply_filters( 'wolf', get_locale(), $domain );
 			load_textdomain( $domain, WP_LANG_DIR.'/'.$domain.'/'.$domain.'-'.$locale.'.mo' );
 			load_plugin_textdomain( $domain, FALSE, dirname( plugin_basename( __FILE__ ) ) . '/lang/' );
-
 		}
 
 		/**
@@ -501,7 +493,6 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 				return $default;
 
 			}
-				
 		}
 
 		/**
@@ -514,7 +505,6 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 			add_settings_field( 'page_id', __( 'Albums Page', 'wolf' ), array( $this, 'setting_page_id' ), 'wolf-albums-settings', 'wolf-albums-settings' );
 			add_settings_field( 'columns', __( 'Max number of column', 'wolf' ), array( $this, 'setting_columns' ), 'wolf-albums-settings', 'wolf-albums-settings' );
 			add_settings_field( 'isotope', __( 'Use Isotope filter', 'wolf' ), array( $this, 'setting_isotope' ), 'wolf-albums-settings', 'wolf-albums-settings' );
-
 		}
 
 		/**
@@ -675,7 +665,6 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 			$html = ob_get_contents();
 			ob_end_clean();
 			return $html;
-
 		}
 
 		/**
@@ -725,11 +714,11 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 					$content = get_the_content();
 					$string = preg_match( '/ids=\"(.*)\"/i', $content, $result );
 
-					if ( isset($result[1] ) ) {
+					if ( isset( $result[1] ) ) {
 						$string = str_replace(' ', '', $result[1] );
 						$image_ids = explode( ',', $string );
 
-						foreach($image_ids as $image_id){
+						foreach( $image_ids as $image_id ) {
 							$img_src_mini = wp_get_attachment_image_src( $image_id, 'thumbnail'); 
 							$img_src_full = wp_get_attachment_image_src( $image_id, 'full-size'); 
 							$grid[] = array(
@@ -775,7 +764,6 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 		 */
 		public function plugin_path() {
 			if ( $this->plugin_path ) return $this->plugin_path;
-
 			return $this->plugin_path = untrailingslashit( plugin_dir_path( __FILE__ ) );
 		}
 
