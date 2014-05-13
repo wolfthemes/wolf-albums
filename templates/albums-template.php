@@ -29,7 +29,6 @@ if ( get_query_var( 'paged' ) ) {
 
 $args = array(
 	'post_type' => 'gallery',
-	'meta_key'    => '_thumbnail_id',
 	'posts_per_page' => -1,
 	//'paged' => $paged
 );
