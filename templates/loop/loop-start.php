@@ -8,4 +8,4 @@
  */
 $columns = wolf_albums_get_option( 'col', 4 );
 ?>
-<ul class="albums <?php echo sanitize_html_class( 'album-grid-col-' . $columns ); ?>">
+<div class="albums <?php echo sanitize_html_class( 'gallery-grid-col-' . $columns ); ?>">

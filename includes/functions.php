@@ -24,7 +24,6 @@ function wolf_albums_template_redirect() {
 
 		wolf_albums_get_template( 'albums-template.php' );
 		exit();
-
 	}
 	
 }

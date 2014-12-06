@@ -13,53 +13,50 @@
 		&:after { clear: both; }
 	}
 
-	#albums-filter-container { 
-		width:100%; 
-		padding:0 5px 0; 
-		height:auto; 
-		position:relative 
-
-	}
-
-	#albums-filter {
-		margin-bottom: 15px;
-		margin-top:0;
-		font-size:16px;
-		margin-left:15px;
-
-		li {
-			list-style-type: none!important;
-			display:inline;
-
-			a {
-				text-shadow:none ;
-				text-decoration: none;
-				@include transition(0.5s); 
-				display:inline; 
-				padding:4px 8px;
-				margin-right: 20px;	
-
-				&:hover{
-					opacity:1!important
-				}
-
-				&.active{
-					color:white!important; 
-					background: #404040;
-				}
-			}
-
-
-		}
-
-	}
-
 	.no-album{
 		text-align: center;
 	}
 }
 
-.albums, .shortcode-albums-grid {
+#albums-filter-container { 
+	width:100%; 
+	padding:0 5px 0; 
+	height:auto; 
+	position:relative 
+
+}
+
+#albums-filter {
+	margin-bottom: 15px;
+	margin-top:0;
+	font-size:16px;
+	margin-left:15px;
+
+	li {
+		list-style-type: none!important;
+		display:inline;
+
+		a {
+			text-shadow:none ;
+			text-decoration: none;
+			@include transition(0.5s); 
+			display:inline; 
+			padding:4px 8px;
+			margin-right: 20px;	
+
+			&:hover{
+				opacity:1!important
+			}
+
+			&.active{
+				color:white!important; 
+				background: #404040;
+			}
+		}
+	}
+}
+
+.albums, .shortcode-gallery-grid {
 	padding: 0;
 	margin-left: 0;
 	margin-right: 0;
@@ -75,8 +72,7 @@
 	.album-item-container{
 		position:relative;
 		margin: 0;
-		width:33.33%;
-		float: left; 
+		width:100%; 
 		height:auto;
 		display: block;
 		padding: 0!important;
@@ -99,7 +95,7 @@
 	}
 
 
-	.albums  .entry-link, #shortcode-albums-grid  .entry-link  {
+	.albums  .entry-link, #shortcode-gallery-grid  .entry-link  {
 		display:block; 
 		text-shadow:none!important;
 		text-align:left;
@@ -189,8 +185,6 @@
 	span.album-overlay {
 		position:absolute; width:100%; height:100%; display:block; 
 	}
-
-	
 }
 
 .widget_last_photos{
@@ -215,60 +209,115 @@
 	}
 }
 
+@media screen and (min-width: 500px) {
 
-$cols : 12;
-$width: 100%;
-
-@for $i from 1 through $cols {
-	.album-grid-col-#{$i} .album-item-container{
-		width: ( $width/$i  ) ;
-	}
-}
-
-
-/* Isotope styles
----------------------------------------*/
-.isotope,
-.isotope .isotope-item {
-	/* change duration value to whatever you like */
-	@include transition-duration(0.8s);
-}
-
-.isotope {
-	@include transition-property(height, width);
-}
-
-.isotope .isotope-item {
-	-webkit-transition-property: -webkit-transform, opacity;
-	-moz-transition-property:    -moz-transform, opacity;
-	-o-transition-property:         top, left, opacity;
-	transition-property:         transform, opacity;
-}
-
-.isotope-item {
-	z-index: 2;
-}
-
-.isotope-hidden.isotope-item {
-	pointer-events: none;
-	z-index: 1;
-}
-
-@media screen and (max-width: 1030px) {
-	
-	.album-grid-col-4 .album-item-container{
-		width: 50%;
-	}
-
-}
-
-@media screen and (max-width:500px) {
-	
-	@for $i from 1 through $cols {
-		.album-grid-col-#{$i} .album-item-container{
-			width: 100%;
-			float: none;
+	.gallery-grid-col-2,
+	.gallery-grid-col-3,
+	.gallery-grid-col-4,
+	.gallery-grid-col-5,
+	.gallery-grid-col-6{
+		.album-item-container{
+			float: left;
+			width: 50%;
 		}
 	}
 
+	.gallery-grid-col-3{
+		.album-item-container{
+			float: left;
+			width: 33.33%;
+			
+			&:nth-child(2n+1){
+				clear:none;
+			}
+
+			&:nth-child(3n+1){
+				clear:left;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 900px) {
+
+	.gallery-grid-col-3,
+	.gallery-grid-col-6{
+		.album-item-container{
+			float: left;
+			width: 33.33%;
+			
+			&:nth-child(2n+1){
+				clear:none;
+			}
+
+			&:nth-child(3n+1){
+				clear:left;
+			}
+		}
+	}
+
+	.gallery-grid-col-4{
+		.album-item-container{
+			width: 25%;
+			
+			&:nth-child(2n+1){
+				clear:none;
+			}
+
+			&:nth-child(4n+1){
+				clear:left;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1200px) {
+
+	.gallery-grid-col-5{
+		.album-item-container{
+			width: 20%;
+			
+			&:nth-child(2n+1){
+				clear:none;
+			}
+
+			&:nth-child(3n+1){
+				clear:none;
+			}
+
+			&:nth-child(4n+1){
+				clear:none;
+			}
+
+			&:nth-child(5n+1){
+				clear:left;
+			}
+		}
+	}
+
+	.gallery-grid-col-6{
+		.album-item-container{
+			width: 16.65%;
+			
+			&:nth-child(2n+1){
+				clear:none;
+			}
+
+			&:nth-child(3n+1){
+				clear:none;
+			}
+
+			&:nth-child(4n+1){
+				clear:none;
+			}
+
+			&:nth-child(5n+1){
+				clear:none;
+			}
+
+			&:nth-child(6n+1){
+				clear:left;
+			}
+		}
+	}
 }

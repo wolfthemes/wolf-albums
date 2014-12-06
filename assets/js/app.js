@@ -1,5 +1,4 @@
-var WolfAlbums = WolfAlbums || {},
-	WolfAlbumsParams = WolfAlbumsParams || {};
+var WolfAlbums = WolfAlbums || {};
 
 /* jshint -W062 */
 WolfAlbums = function ( $ ) {
@@ -9,85 +8,40 @@ WolfAlbums = function ( $ ) {
 	return {
 
 		/**
-		 * Init albums isotope masonry
+		 * Init isotope masonry
 		 */
 		init : function () {
 			
-			var $this = this,
-				mainAlbumsContainer = $( '.albums' ),
-				albumOptionFilter = $( '#albums-filter' ),
-				albumOptionFilterLinks = albumOptionFilter.find( 'a' ),
+			var mainContainer = $( '.albums' ),
+				OptionFilter = $( '#albums-filter' ),
+				OptionFilterLinks = OptionFilter.find( 'a' ),
 				selector;
-			
-			mainAlbumsContainer.imagesLoaded( function() {
-				$this.setColumnWidth( '.album-item-container', mainAlbumsContainer );
-				mainAlbumsContainer.isotope( {
+
+
+			mainContainer.imagesLoaded( function() {
+				mainContainer.isotope( {
 					itemSelector : '.album-item-container'
 				} );
 			} );
 
-			albumOptionFilterLinks.click( function() {
+			OptionFilterLinks.click( function() {
 				selector = $( this ).attr( 'data-filter' );
-				albumOptionFilterLinks.attr( 'href', '#' );
-				$this.setColumnWidth( '.album-item-container', mainAlbumsContainer );
-				mainAlbumsContainer.isotope( {
+				OptionFilterLinks.attr( 'href', '#' );
+				mainContainer.isotope( {
 					filter : '.' + selector,
 					itemSelector : '.album-item-container',
 					layoutMode : 'fitRows',
 					animationEngine : 'best-available'
 				} );
 
-				albumOptionFilterLinks.removeClass( 'active' );
+				OptionFilterLinks.removeClass( 'active' );
 				$( this ).addClass( 'active' );
 				return false;
 			} );
-
-			$( window ).smartresize( function() {
-				$this.setColumnWidth( '.album-item-container', mainAlbumsContainer );
-				mainAlbumsContainer.isotope( 'reLayout' );
-			} );
-		},
-
-		/**
-		 * Get column count depending on container width
-		 */
-		getNumColumns : function ( mainContainer ) {
-			var winWidth = mainContainer.width(),
-				column = WolfAlbumsParams.columns;
-			if ( 481 > winWidth ) {
-				column = 1;
-			} else if ( 481 <= winWidth && 767 > winWidth ) {
-				column = 2;
-			} else if ( 767 <= winWidth ) {
-				column = WolfAlbumsParams.columns;
-			}
-			return column;
-		},
-		
-		/**
-		 * Get column width depending on column number
-		 */
-		getColumnWidth : function ( mainContainer ) {
-			var columns = this.getNumColumns( mainContainer ),
-				wrapperWidth = mainContainer.width(),
-				columnWidth = Math.floor( wrapperWidth / columns );
-			return columnWidth;
-		},
-
-		/**
-		 * Set column width
-		 */
-		setColumnWidth : function ( selector, mainContainer ) {
-			var ColumnWidth = this.getColumnWidth( mainContainer );
-			$( selector ).each( function() {
-				$( this ).css( { 'width' : ColumnWidth + 'px' } );
-			} );
 		}
-
 	};
 
 }( jQuery );
-
 
 ;( function( $ ) {
 
@@ -98,7 +52,6 @@ WolfAlbums = function ( $ ) {
 		if ( $( '.albums' ).length ) {
 			WolfAlbums.init();
 		}
-
 	} );
 
 } )( jQuery );

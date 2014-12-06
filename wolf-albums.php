@@ -3,11 +3,11 @@
  * Plugin Name: Wolf Albums
  * Plugin URI: http://wpwolf.com/plugin/wolf-albums
  * Description: A ready-to-use gallery custom post type with Isotope filter.
- * Version: 1.0.8
+ * Version: 1.0.9
  * Author: WpWolf
  * Author URI: http://wpwolf.com
  * Requires at least: 3.5
- * Tested up to: 3.9
+ * Tested up to: 4.0
  *
  * Text Domain: wolf
  * Domain Path: /lang/
@@ -51,7 +51,7 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 		/**
 		 * @var string
 		 */
-		public $version = '1.0.8';
+		public $version = '1.0.9';
 
 		/**
 		 * @var string
@@ -105,9 +105,6 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 			// register shortcode
 			add_shortcode( 'wolf_last_albums', array( $this, 'shortcode' ) );
 
-			// styles
-			add_action( 'wp_print_styles', array( $this, 'print_styles' ) );
-
 			// scripts
 			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
@@ -123,7 +120,7 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 		 */
 		public function activate( $network_wide ) {
 			
-			// do stuff
+			flush_rewrite_rules();
 		}
 
 		/**
@@ -203,29 +200,50 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 		 */
 		public function check_page() {
 
-			// delete_option( '_wolf_albums_page_id' );
-			// delete_option( 'wolf_albums_settings' );
-			// var_dump( get_option('wolf_albums_settings') );
-
 			$output    = '';
 			$theme_dir = get_template_directory();
 
+			//add_option( '_wolf_albums_needs_page', true );
+			if ( ! get_option( '_wolf_albums_needs_page' ) )
+				return;
+
 			if ( -1 == wolf_albums_get_page_id() && ! isset( $_GET['wolf_albums_create_page'] ) ) {
 
+				if ( isset( $_GET['skip_wolf_albums_setup'] ) ) {
+					delete_option( '_wolf_albums_needs_page' );
+					return;
+				}
+				
+				update_option( '_wolf_albums_needs_page', true );
+				
 				$message = '<strong>Wolf Albums</strong> ' . sprintf(
-					__( 'says : <em>Almost done! you need to <a href="%1$s">create a page</a> for your galleries or <a href="%2$s">select an existing page</a> in the plugin settings</em>', 'wolf' ), 
+					__( 'says : <em>Almost done! you need to <a href="%1$s">create a page</a> for your galleries or <a href="%2$s">select an existing page</a> in the plugin settings</em>.', 'wolf' ), 
 						esc_url( admin_url( '?wolf_albums_create_page=true' ) ),
 						esc_url( admin_url( 'edit.php?post_type=gallery&page=wolf-albums-settings' ) )
 				);
 
-				$output = '<div class="updated"><p>';
+				$message .= sprintf(
+					__( '<br><br>
+						<a href="%1$s" class="button button-primary">Create a page</a>
+						&nbsp;
+						<a href="%2$s" class="button button-primary">Select an existing page</a>
+						&nbsp;
+						<a href="%3$s" class="button">Skip setup</a>', 'wolf' ), 
+						esc_url( admin_url( '?wolf_albums_create_page=true' ) ),
+						esc_url( admin_url( 'edit.php?post_type=gallery&page=wolf-albums-settings' ) ),
+						esc_url( admin_url( '?skip_wolf_albums_setup=true' ) )
+				);
 
-				$output .= $message;
+				$output = '<div class="updated wolf-admin-notice wolf-plugin-admin-notice"><p>';
+
+					$output .= $message;
 
 				$output .= '</p></div>';
 
 				echo $output;
+			} else {
 
+				delete_option( '_wolf_albums_need_page' );
 			}
 
 			return false;
@@ -293,6 +311,9 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 
 			// register post type
 			$this->register_taxonomy();
+
+			// add body class
+			add_filter( 'body_class', array( $this, 'add_body_class' ) );
 		}
 
 		/**
@@ -340,29 +361,33 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 		}
 
 		/**
-		 * Print CSS styles
+		 * Add a specific body class on albums index and taxonomy pages
 		 */
-		public function print_styles() {
+		public function add_body_class( $classes ) {
+			if ( 
+				! is_singular( 'gallery' )
+				&& ( 'gallery' == get_post_type() || ( function_exists( 'wolf_albums_get_page_id' ) && is_page( wolf_albums_get_page_id() ) ) )
+			) {
+				$classes[] = 'wolf-albums';
+				$classes[] = 'wolf-albums-cols-' . $this->get_option( 'col', 3 );
+			}
 
-			wp_enqueue_style( 'wolf-albums', $this->plugin_url() . '/assets/css/albums.min.css', array(), $this->version, 'all' );
-
+			return $classes;
 		}
 
 		/**
-		 * Enqueue JS script in footer
+		 * Enqueue scripts
 		 */
 		public function enqueue_scripts() {
+
+			wp_enqueue_style( 'wolf-albums', $this->plugin_url() . '/assets/css/albums.min.css', array(), $this->version, 'all' );
 
 			if ( $this->get_option( 'isotope' ) && is_page( wolf_albums_get_page_id() ) ) {
 
 				wp_enqueue_script( 'jquery' );
-				wp_enqueue_script( 'isotope', $this->plugin_url() . '/assets/js/lib/jquery.isotope.min.js', 'jquery', '1.5.25', true );
+				wp_enqueue_script( 'imagesloaded', $this->plugin_url() . '/assets/js/lib/imagesloaded.pkgd.min.js', 'jquery', '3.1.8', true );
+				wp_enqueue_script( 'isotope', $this->plugin_url() . '/assets/js/lib/isotope.pkgd.min.js', 'jquery', '2.0.1', true );
 				wp_enqueue_script( 'wolf-albums', $this->plugin_url() . '/assets/js/app.min.js', 'jquery', $this->version, true );
-				wp_localize_script(
-						'wolf-albums', 'WolfAlbumsParams', array(
-							'columns' => $this->get_option( 'col', 3 ),
-						)
-				);
 			}
 		}
 		
@@ -555,11 +580,11 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 		 *
 		 */
 		public function setting_columns() {
-			$columns = array( 5, 4, 3 );
+			$columns = array( 1, 2, 3, 4, 5, 6 );
 			?>
 			<select name="wolf_albums_settings[col]">
 				<?php foreach ( $columns as $column ) : ?>
-				<option <?php if ( $column == $this->get_option( 'col', 4 ) ) echo 'selected="selected"'; ?>><?php echo intval( $column ); ?></option>
+				<option <?php if ( $column == $this->get_option( 'col', 3 ) ) echo 'selected="selected"'; ?>><?php echo intval( $column ); ?></option>
 				<?php endforeach; ?>
 			</select>
 			<?php _e( 'Number of column on desktop screen', 'wolf' ); ?>
@@ -650,13 +675,13 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 
 			$loop = new WP_Query( $args );
 			if ( $loop->have_posts() ) : ?>
-				<ul class="shortcode-albums-grid album-grid-col-<?php echo intval( $col ); ?>">
+				<div class="shortcode-gallery-grid gallery-grid-col-<?php echo intval( $col ); ?>">
 					<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
 						<?php wolf_albums_get_template_part( 'content', 'album' ); ?>
 
 					<?php endwhile; ?>
-				</ul><!-- .shortcode-albums-grid -->
+				</div><!-- .shortcode-albums-grid -->
 			<?php else : // no album ?>
 				<?php wolf_albums_get_template( 'loop/no-album-found.php' ); ?>
 			<?php endif;

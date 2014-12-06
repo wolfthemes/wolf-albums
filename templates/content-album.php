@@ -21,7 +21,7 @@ if ( get_the_terms( $post_id, 'gallery_type' ) ) {
 $term_list = ( $term_list ) ? substr( $term_list, 0, -1 ) : '';
 ?>
 <?php if ( wolf_albums_get_thumbnail() && ! post_password_required() ) : ?>
-<li id="post-<?php the_ID(); ?>" <?php post_class( array( 'album-item-container', $term_list ) ); ?>>
+<div id="post-<?php the_ID(); ?>" <?php post_class( array( 'album-item-container', $term_list ) ); ?>>
 	<span class="album-item">
 		<a class="entry-link" href="<?php the_permalink(); ?>">
 			<span class="album-thumb">
@@ -33,5 +33,5 @@ $term_list = ( $term_list ) ? substr( $term_list, 0, -1 ) : '';
 			</span>
 		</a>
 	</span>
-</li><!-- li.album-item-container -->
+</div><!-- li.album-item-container -->
 <?php endif; ?>
