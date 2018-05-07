@@ -2,7 +2,7 @@
 /**
  * The Albums category filter
  *
- * @author WpWolf
+ * @author WolfThemes
  * @package WolfAlbums/Templates
  * @since 1.0.4
  */
@@ -24,7 +24,7 @@ if ( $tax != array() ) :
 ?>
 <div id="albums-filter-container">
 	<ul id="albums-filter">
-		<li><a data-filter="gallery"<?php echo $active_class; ?> href="<?php echo esc_url( wolf_get_albums_url() ); ?>"><?php _e( 'All', 'wolf' ); ?></a></li>
+		<li><a data-filter="gallery"<?php echo $active_class; ?> href="<?php echo esc_url( wolf_get_albums_url() ); ?>"><?php _e( 'All', 'wolf-albums' ); ?></a></li>
 	<?php foreach ( $tax as $t ) : ?>
 		<?php if ( 0 != $t->count ) : ?>
 			<li>

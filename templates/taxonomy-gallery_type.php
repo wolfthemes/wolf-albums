@@ -4,12 +4,10 @@
  *
  * Override this template by copying it to yourtheme/wolf-albums/albums-template.php
  *
- * @author WpWolf
- * @package WolfAlbums/Templates
+ * @author %AUTHOR%
+ * @package %PACKAGENAME%/Templates
  * @since 1.0.4
  */
-
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 get_header( 'albums' ); ?>
 	<div class="albums-container">

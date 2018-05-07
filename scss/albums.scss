@@ -56,7 +56,8 @@
 	}
 }
 
-.albums, .shortcode-gallery-grid {
+.albums, 
+.shortcode-gallery-grid {
 	padding: 0;
 	margin-left: 0;
 	margin-right: 0;
@@ -187,6 +188,12 @@
 	}
 }
 
+/* Images */
+.images-container .hentry{
+	float: left;
+	display: block;
+}
+
 .widget_last_photos{
 	a{
 		-webkit-box-sizing: border-box;
@@ -196,7 +203,7 @@
 			-webkit-box-sizing: border-box;
 			-moz-box-sizing: border-box;
 			box-sizing: border-box; }
-		
+
 		display: inline-block;
 		padding:0px 2px;
 		width: 50%;

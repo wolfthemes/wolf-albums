@@ -4,39 +4,33 @@
  *
  * Override this template by copying it to yourtheme/wolf-albums/albums-template.php
  *
- * @author WpWolf
- * @package WolfAlbums/Templates
- * @since 1.0.4
+ * @author %AUTHOR%
+ * @package %PACKAGENAME%/Templates
+ * @since 1.0.3
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-
-get_header( 'albums' ); 
-
-if ( get_query_var( 'paged' ) ) {
-
-	$paged = get_query_var( 'paged' );
-
-} elseif ( get_query_var( 'page' ) ) {
-
-	$paged = get_query_var( 'page' );
-
-} else {
-
-	$paged = 1;
-
+if ( ! defined( 'ABSPATH' ) ){
+	exit; // Exit if accessed directly
 }
 
-$args = array(
-	'post_type' => 'gallery',
-	'posts_per_page' => -1,
-	//'paged' => $paged
-);
+get_header( 'albums' );
 
-/* Albums Post Loop */
-$loop = new WP_Query( $args );
+	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+	$posts_per_page = apply_filters( 'wa_posts_per_page', -1 );
+
+	$args = array(
+		'post_type' => 'gallery',
+		'posts_per_page' => $posts_per_page,
+	);
+
+	if ( -1 < $posts_per_page ) {
+		$args['paged'] = $paged;
+	}
+
+	/* Albums Post Loop */
+	$loop = new WP_Query( $args );
 ?>
-	<div class="albums-container">
+	<div id="container" class="albums-container">
 		<?php if ( $loop->have_posts() ) : ?>
 			
 			<?php
@@ -62,4 +56,7 @@ $loop = new WP_Query( $args );
 			
 			<?php endif; // end have_posts() check ?>
 	</div><!-- .album-container -->
-<?php get_footer( 'albums' ); ?>
+<?php
+get_sidebar( 'albums' );
+get_footer( 'albums' );
+?>

@@ -1,0 +1,246 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WolfAlbums\n"
+"POT-Creation-Date: 2014-04-08 18:28+0100\n"
+"PO-Revision-Date: 2014-07-19 14:24+0100\n"
+"Last-Translator: Gigi Pastore <luigipastore@gmail.com>\n"
+"Language-Team: wpwolf.com <support@wpwolf.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.6\n"
+"X-Poedit-KeywordsList: _e;__;_x\n"
+"X-Poedit-Basepath: .\n"
+"Language: it_IT\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../wolf-albums.php:220 ../pack/wolf-albums/wolf-albums.php:220
+#, php-format
+msgid ""
+"says : <em>Almost done! you need to <a href=\"%1$s\">create a page</a> for "
+"your galleries or <a href=\"%2$s\">select an existing page</a> in the plugin "
+"settings</em>"
+msgstr ""
+
+#: ../wolf-albums.php:261 ../pack/wolf-albums/wolf-albums.php:261
+msgid "Your albums page has been created succesfully"
+msgstr "La pagina degli album è stata creata correttamente"
+
+#: ../wolf-albums.php:384 ../wolf-albums.php:396
+#: ../pack/wolf-albums/wolf-albums.php:384
+#: ../pack/wolf-albums/wolf-albums.php:396
+msgid "Galleries"
+msgstr "Gallerie"
+
+#: ../wolf-albums.php:385 ../pack/wolf-albums/wolf-albums.php:385
+msgid "Gallery"
+msgstr "Galleria"
+
+#: ../wolf-albums.php:386 ../pack/wolf-albums/wolf-albums.php:386
+msgid "Add New"
+msgstr "Aggiungi Nuovo"
+
+#: ../wolf-albums.php:387 ../pack/wolf-albums/wolf-albums.php:387
+msgid "Add New Gallery"
+msgstr "Aggiungi Nuova Galleria"
+
+#: ../wolf-albums.php:388 ../pack/wolf-albums/wolf-albums.php:388
+msgid "All Galleries"
+msgstr "Tutte le Gallerie"
+
+#: ../wolf-albums.php:389 ../pack/wolf-albums/wolf-albums.php:389
+msgid "Edit Gallery"
+msgstr "Modifica Galleria"
+
+#: ../wolf-albums.php:390 ../pack/wolf-albums/wolf-albums.php:390
+msgid "New Gallery"
+msgstr "Nuova Galleria"
+
+#: ../wolf-albums.php:391 ../pack/wolf-albums/wolf-albums.php:391
+#: ../pack/wolf-albums/templates/content-album.php:31
+#: ../templates/content-album.php:31
+msgid "View Gallery"
+msgstr "Vedi Galleria"
+
+#: ../wolf-albums.php:392 ../pack/wolf-albums/wolf-albums.php:392
+msgid "Search Galleries"
+msgstr "Cerca Gallerie"
+
+#: ../wolf-albums.php:393 ../pack/wolf-albums/wolf-albums.php:393
+msgid "No Galleries found"
+msgstr "Nessuna Galleria Trovata"
+
+#: ../wolf-albums.php:394 ../pack/wolf-albums/wolf-albums.php:394
+msgid "No Galleries found in Trash"
+msgstr "Nessuna Galleria trovata nel Cestino"
+
+#: ../wolf-albums.php:415 ../pack/wolf-albums/wolf-albums.php:415
+msgid "Present your albums"
+msgstr ""
+
+#: ../wolf-albums.php:428 ../pack/wolf-albums/wolf-albums.php:428
+msgid "Galleries Categories"
+msgstr "Categorie Galleria"
+
+#: ../wolf-albums.php:429 ../pack/wolf-albums/wolf-albums.php:429
+msgid "Galleries Type"
+msgstr "Tipi Galleria"
+
+#: ../wolf-albums.php:430 ../pack/wolf-albums/wolf-albums.php:430
+msgid "Search Galleries Categories"
+msgstr "Cerca Categorie Galleria"
+
+#: ../wolf-albums.php:431 ../pack/wolf-albums/wolf-albums.php:431
+msgid "Popular Galleries Categories"
+msgstr "Categorie Galleria più utlizzate"
+
+#: ../wolf-albums.php:432 ../pack/wolf-albums/wolf-albums.php:432
+msgid "All Galleries Categories"
+msgstr "Tutte le Categorie Galleria"
+
+#: ../wolf-albums.php:433 ../pack/wolf-albums/wolf-albums.php:433
+msgid "Parent Galleries Type"
+msgstr "Tipo Gallerie Genitore"
+
+#: ../wolf-albums.php:434 ../pack/wolf-albums/wolf-albums.php:434
+msgid "Parent Galleries Type:"
+msgstr "Tipo Gallerie Genitore:"
+
+#: ../wolf-albums.php:435 ../pack/wolf-albums/wolf-albums.php:435
+msgid "Edit Galleries Type"
+msgstr "Modifica Tipo Gallerie"
+
+#: ../wolf-albums.php:436 ../pack/wolf-albums/wolf-albums.php:436
+msgid "Update Galleries Type"
+msgstr "Aggiorna Tipo Gallerie"
+
+#: ../wolf-albums.php:437 ../pack/wolf-albums/wolf-albums.php:437
+msgid "Add New Galleries Type"
+msgstr "Aggiungi Tipo Galleria"
+
+#: ../wolf-albums.php:438 ../pack/wolf-albums/wolf-albums.php:438
+msgid "New Galleries Type"
+msgstr "Nuovo Tipo Gallerie"
+
+#: ../wolf-albums.php:439 ../pack/wolf-albums/wolf-albums.php:439
+msgid "Separate gallery categories with commas"
+msgstr "Separa categorie galleria con la virgola"
+
+#: ../wolf-albums.php:440 ../pack/wolf-albums/wolf-albums.php:440
+msgid "Add or remove gallery categories"
+msgstr "Aggiungi o rimuovi categorie galleria"
+
+#: ../wolf-albums.php:441 ../pack/wolf-albums/wolf-albums.php:441
+msgid "Choose from the most used gallery categories"
+msgstr "Scegli tra le categorie galleria più utilizzate"
+
+#: ../wolf-albums.php:442 ../pack/wolf-albums/wolf-albums.php:442
+msgid "Categories"
+msgstr "Categorie"
+
+#: ../wolf-albums.php:464 ../pack/wolf-albums/wolf-albums.php:464
+msgid "Settings"
+msgstr "Impostazioni"
+
+#: ../wolf-albums.php:465 ../pack/wolf-albums/wolf-albums.php:465
+msgid "Shortcode"
+msgstr "Shortcode"
+
+#: ../wolf-albums.php:514 ../pack/wolf-albums/wolf-albums.php:514
+msgid "Albums Page"
+msgstr "Pagina Album"
+
+#: ../wolf-albums.php:515 ../pack/wolf-albums/wolf-albums.php:515
+msgid "Max number of column"
+msgstr "Numero massimo di colonne"
+
+#: ../wolf-albums.php:516 ../pack/wolf-albums/wolf-albums.php:516
+msgid "Use Isotope filter"
+msgstr "Usa filtro Isotopo"
+
+#: ../wolf-albums.php:555 ../pack/wolf-albums/wolf-albums.php:555
+msgid "Select a page..."
+msgstr "Seleziona una pagina..."
+
+#: ../wolf-albums.php:575 ../pack/wolf-albums/wolf-albums.php:575
+msgid "Number of column on desktop screen"
+msgstr "Numero colonne sulla schermata desktop"
+
+#: ../wolf-albums.php:598 ../pack/wolf-albums/wolf-albums.php:598
+msgid "Albums Settings"
+msgstr "Impostazioni Album"
+
+#: ../wolf-albums.php:601 ../pack/wolf-albums/wolf-albums.php:601
+msgid "Settings saved."
+msgstr "Impostazioni salvate."
+
+#: ../wolf-albums.php:607 ../pack/wolf-albums/wolf-albums.php:607
+msgid "Save Changes"
+msgstr "Salva Impostazioni"
+
+#: ../wolf-albums.php:620 ../pack/wolf-albums/wolf-albums.php:620
+msgid "Albums Shortcode"
+msgstr "Shortcode Album"
+
+#: ../wolf-albums.php:621 ../pack/wolf-albums/wolf-albums.php:621
+msgid ""
+"To display your last albums in your post or page you can use the following "
+"shortcode."
+msgstr ""
+"Per visualizzare i tuoi ultimi album nei post o nelle pagine puoi usare il "
+"seguente shortcode."
+
+#: ../wolf-albums.php:623 ../pack/wolf-albums/wolf-albums.php:623
+msgid "Additionally, you can add a count and/or a category attribute."
+msgstr "Inoltre, puoi aggiungere un attributo count e/o un attributo category"
+
+#: ../wolf-albums.php:626 ../pack/wolf-albums/wolf-albums.php:626
+msgid "You can also add a column count attribute."
+msgstr "Puoi anche aggiungere un attributo per il numero di colonne."
+
+#: ../wolf-albums.php:698 ../pack/wolf-albums/wolf-albums.php:698
+msgid "<span class=\"meta-nav\">&larr;</span> %title"
+msgstr "<span class=\"meta-nav\">&larr;</span> %title"
+
+#: ../wolf-albums.php:699 ../pack/wolf-albums/wolf-albums.php:699
+msgid "%title <span class=\"meta-nav\">&rarr;</span>"
+msgstr "%title <span class=\"meta-nav\">&rarr;</span>"
+
+#: ../wolf-albums.php:754 ../pack/wolf-albums/wolf-albums.php:754
+msgid "No photo uploaded yet."
+msgstr "Nessuna foto caricata."
+
+#: ../includes/last-photos-widget.php:25
+#: ../pack/wolf-albums/includes/last-photos-widget.php:25
+msgid "Display your last photos"
+msgstr "Vedi le tue ulitme foto"
+
+#: ../includes/last-photos-widget.php:28 ../includes/last-photos-widget.php:84
+#: ../pack/wolf-albums/includes/last-photos-widget.php:28
+#: ../pack/wolf-albums/includes/last-photos-widget.php:84
+msgid "Last Photos"
+msgstr "Ultime Foto"
+
+#: ../includes/last-photos-widget.php:91
+#: ../pack/wolf-albums/includes/last-photos-widget.php:91
+msgid "Title"
+msgstr "Titolo"
+
+#: ../includes/last-photos-widget.php:95
+#: ../pack/wolf-albums/includes/last-photos-widget.php:95
+msgid "Optional Text"
+msgstr "Testo Facoltativo"
+
+#: ../includes/last-photos-widget.php:99
+#: ../pack/wolf-albums/includes/last-photos-widget.php:99
+msgid "Count"
+msgstr "Numero"
+
+#: ../pack/wolf-albums/templates/filter.php:27 ../templates/filter.php:27
+msgid "All"
+msgstr "Tutte"
+
+#: ../pack/wolf-albums/templates/loop/no-album-found.php:12
+#: ../templates/loop/no-album-found.php:12
+msgid "Nothing found"
+msgstr "Nessun risultato"

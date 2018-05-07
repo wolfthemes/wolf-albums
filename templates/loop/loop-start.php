@@ -2,7 +2,7 @@
 /**
  * Albums Loop Start
  *
- * @author WpWolf
+ * @author WolfThemes
  * @package WolfAlbums/Templates
  * @since 1.0.4
  */
