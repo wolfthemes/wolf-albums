@@ -2,8 +2,8 @@
 /**
  * Content wrappers
  *
- * @author %AUTHOR%
- * @package %PACKAGENAME%/Templates
+ * @author WolfThemes
+ * @package WolfAlbums/Templates
  * @since 1.0.4
  */
 

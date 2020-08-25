@@ -1,18 +1,16 @@
 <?php
 /**
- * %NAME% Shortcode.
+ * Wolf Albums Shortcode.
  *
  * @class WA_Shortcode
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Shortcode
- * @version %VERSION%
+ * @package WolfAlbums/Shortcode
+ * @version 1.0.7
  * @since 1.2.2
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+defined( 'ABSPATH' ) || exit;
 
 /**
  * WA_Shortcode class.

@@ -1,0 +1,16 @@
+{
+	"version" : "1.3.1",
+	"updated" : "2020-08-25",
+	"slug" : "wolf-albums",
+	"name" : "Wolf Albums",
+	"packagename" : "WolfAlbums",
+	"created" : "2013-11-19",
+	"createdNice" : "19th november 2013",
+	"description" : "A photo gallery post type for your site",
+	"link" : "https://github.com/wolfthemes/wolf-albums",
+	"shortlink" : "http://wlfthm.es/wolf-albums",
+	"author" : "WolfThemes",
+	"authorURI" : "https://wolfthemes.com",
+	"requires" : "5.0.0",
+	"tested" : "5.5"
+}

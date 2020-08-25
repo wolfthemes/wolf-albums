@@ -1,17 +1,15 @@
 <?php
 /**
- * %NAME% Admin.
+ * Wolf Albums Admin.
  *
  * @class WA_Admin
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Admin
- * @package %PACKAGENAME%/Admin
- * @version %VERSION%
+ * @package WolfAlbums/Admin
+ * @version 1.0.7
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+defined( 'ABSPATH' ) || exit;
 
 /**
  * WA_Admin class.
@@ -50,7 +48,7 @@ class WA_Admin {
 		add_filter( 'plugin_action_links_' . plugin_basename( WA_PATH ), array( $this, 'settings_action_links' ) );
 
 		// Plugin update notifications
-		add_action( 'admin_init', array( $this, 'plugin_update' ) );
+		//add_action( 'admin_init', array( $this, 'plugin_update' ) );
 
 		// Create page notice
 		add_action( 'admin_notices', array( $this, 'check_page' ) );
@@ -81,6 +79,8 @@ class WA_Admin {
 	 */
 	public function check_page() {
 
+		global $pagenow;
+
 		$output    = '';
 		$theme_dir = get_template_directory();
 
@@ -105,7 +105,7 @@ class WA_Admin {
 
 			$message = '<strong>Wolf Albums</strong> ' . sprintf(
 					wp_kses(
-						__( 'says : <em>Almost done! you need to <a href="%1$s">create a page</a> for your albums or <a href="%2$s">select an existing page</a> in the plugin settings</em>.', '%TEXTDOMAIN%' ),
+						__( 'says : <em>Almost done! you need to <a href="%1$s">create a page</a> for your albums or <a href="%2$s">select an existing page</a> in the plugin settings</em>.', 'wolf-albums' ),
 						array(
 							'a' => array(
 								'href' => array(),
@@ -128,7 +128,7 @@ class WA_Admin {
 					&nbsp;
 					<a href="%2$s" class="button button-primary">Select an existing page</a>
 					&nbsp;
-					<a href="%3$s" class="button">Skip setup</a>', '%TEXTDOMAIN%' ),
+					<a href="%3$s" class="button">Skip setup</a>', 'wolf-albums' ),
 
 					array(
 							'a' => array(
@@ -152,7 +152,10 @@ class WA_Admin {
 
 			$output .= '</p></div>';
 
-			echo $output;
+			if ( 'index.php' === $pagenow && ! defined( 'DOING_AJAX' ) ) {
+				echo $output;
+			}
+
 		} else {
 
 			delete_option( '_wolf_albums_need_page' );
@@ -172,7 +175,7 @@ class WA_Admin {
 
 			// Create post object
 			$post = array(
-				'post_title'  => esc_html__( 'Albums', '%TEXTDOMAIN%' ),
+				'post_title'  => esc_html__( 'Albums', 'wolf-albums' ),
 				'post_type'   => 'page',
 				'post_status' => 'publish',
 			);
@@ -185,7 +188,7 @@ class WA_Admin {
 				update_option( '_wolf_albums_page_id', $post_id );
 				update_post_meta( $post_id, '_wpb_status', 'off' ); // disable page builder mode for this page
 
-				$message = esc_html__( 'Your albums page has been created succesfully', '%TEXTDOMAIN%' );
+				$message = esc_html__( 'Your albums page has been created succesfully', 'wolf-albums' );
 
 				$output = '<div class="updated"><p>';
 
@@ -207,7 +210,7 @@ class WA_Admin {
 	public function is_index_page() {
 
 		if ( isset( $_GET['post'] ) && absint( $_GET['post'] ) == wolf_albums_get_page_id() ) {
-			$message = esc_html__( 'You are currently editing the page that shows the albums.', '%TEXTDOMAIN%' );
+			$message = esc_html__( 'You are currently editing the page that shows the albums.', 'wolf-albums' );
 
 			$output = '<div class="notice notice-warning inline"><p>';
 
@@ -253,7 +256,7 @@ class WA_Admin {
 	 */
 	public function admin_columns_head_gallery_thumb( $columns ) {
 
-		$columns['gallery_thumbnail']   = esc_html__( 'Thumbnail', '%TEXTDOMAIN%' );
+		$columns['gallery_thumbnail']   = esc_html__( 'Thumbnail', 'wolf-albums' );
 		return $columns;
 	}
 
@@ -270,7 +273,7 @@ class WA_Admin {
 		if ( 'gallery_thumbnail' == $column_name ) {
 
 			if ( $thumbnail ) {
-				echo '<a href="' . get_edit_post_link() . '" title="' . esc_attr( sprintf( esc_html__( 'Edit "%s"', '%TEXTDOMAIN%' ), get_the_title() ) ) . '">' . get_the_post_thumbnail( '', array( 60, 60 ), array( 'style' => 'max-width:60px;height:auto;' ) ) . '</a>';
+				echo '<a href="' . get_edit_post_link() . '" title="' . esc_attr( sprintf( esc_html__( 'Edit "%s"', 'wolf-albums' ), get_the_title() ) ) . '">' . get_the_post_thumbnail( '', array( 60, 60 ), array( 'style' => 'max-width:60px;height:auto;' ) ) . '</a>';
 			}
 		}
 	}
@@ -280,7 +283,7 @@ class WA_Admin {
 	 */
 	public function settings_action_links( $links ) {
 		$setting_link = array(
-			'<a href="' . admin_url( 'edit.php?post_type=gallery&page=wolf-albums-settings' ) . '">' . esc_html__( 'Settings', '%TEXTDOMAIN%' ) . '</a>',
+			'<a href="' . admin_url( 'edit.php?post_type=gallery&page=wolf-albums-settings' ) . '">' . esc_html__( 'Settings', 'wolf-albums' ) . '</a>',
 		);
 		return array_merge( $links, $setting_link );
 	}

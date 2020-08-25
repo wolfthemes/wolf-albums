@@ -1,3 +1,12 @@
+#### 2nd July 2018 - Version 1.3.0
+
+* Tweak: Added "wolf_gallery_post_type_labels" filter
+* Tweak: Added post type slug and name option
+
+#### 14th June 2019 - Version 1.2.8
+
+* Tweak: Output admin message only in dashboard
+
 #### 7th May 2018 - Version 1.2.7
 
 * Tweak: Add post state in admin

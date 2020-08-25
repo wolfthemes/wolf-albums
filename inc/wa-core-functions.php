@@ -1,18 +1,16 @@
 <?php
 /**
- * %NAME% core functions
+ * Wolf Albums core functions
  *
  * General core functions available on admin and frontend
  *
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Core
- * @version %VERSION%
+ * @package WolfAlbums/Core
+ * @version 1.0.7
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Add image sizes
@@ -172,3 +170,23 @@ function wolf_albums_get_option( $value, $default = null ) {
 		return $default;
 	}
 }
+
+/**
+ * Overwrite post type slug
+ *
+ * @param array $args
+ * @return array $args
+ */
+function wolf_albums_overwrite_post_type( $args, $post_type ) {
+	
+	if ( wolf_albums_get_option( 'slug' ) && 'gallery' === $post_type ) {
+		$args['rewrite']['slug'] = sanitize_title_with_dashes( wolf_albums_get_option( 'slug' ) );
+	}
+
+	if ( wolf_albums_get_option( 'name' ) && 'gallery' === $post_type ) {
+		$args['labels']['singular_name'] = esc_attr( wolf_albums_get_option( 'name' ) );
+	}
+
+	return $args;
+}
+add_filter( 'register_post_type_args', 'wolf_albums_overwrite_post_type', 20, 2 );

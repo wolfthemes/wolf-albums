@@ -1,26 +1,26 @@
 <?php
 /**
  * Plugin Name: Wolf Albums
- * Plugin URI: %LINK%
- * Description: %DESCRIPTION%
- * Version: %VERSION%
- * Author: %AUTHOR%
- * Author URI: %AUTHORURI%
- * Requires at least: %REQUIRES%
- * Tested up to: %TESTED%
+ * Plugin URI: https://wlfthm.es/wolf-albums
+ * Description: A photo album post type for your site
+ * Version: 1.3.0
+ * Author: WolfThemes
+ * Author URI: https://wolfthemes.com
+ * Requires at least: 5.0
+ * Tested up to: 5.5
  *
- * Text Domain: %TEXTDOMAIN%
+ * Text Domain: wolf-albums
  * Domain Path: /languages/
  *
- * @package %PACKAGENAME%
+ * @package WolfAlbums
  * @category Core
- * @author %AUTHOR%
+ * @author WolfThemes
  *
  * Being a free product, this plugin is distributed as-is without official support.
  * Verified customers however, who have purchased a premium theme
- * at https://themeforest.net/user/Wolf-Themes/portfolio?ref=Wolf-Themes
+ * at https://wlfthm.es/tf/
  * will have access to support for this plugin in the forums
- * https://help.wolfthemes.com/
+ * https://wlfthm.es/help/
  *
  * Copyright (C) 2013 Constantin Saguin
  * This WordPress Plugin is a free software: you can redistribute it and/or modify
@@ -34,9 +34,7 @@
  * See https://www.gnu.org/licenses/gpl-3.0.html
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'Wolf_Albums' ) ) {
 	/**
@@ -59,7 +57,7 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 		/**
 		 * @var string
 		 */
-		public $version = '%VERSION%';
+		public $version = '1.3.0';
 
 		/**
 		 * @var %NAME% The single instance of the class
@@ -123,7 +121,7 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 				<p><?php
 
 				printf(
-					esc_html__( '%1$s needs at least PHP %2$s installed on your server. You have version %3$s currently installed. Please contact your hosting service provider if you\'re not able to update PHP by yourself.', '%TEXTDOMAIN%' ),
+					esc_html__( '%1$s needs at least PHP %2$s installed on your server. You have version %3$s currently installed. Please contact your hosting service provider if you\'re not able to update PHP by yourself.', 'wolf-albums' ),
 					'%NAME%',
 					$this->required_php_version,
 					phpversion()
@@ -137,9 +135,12 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 		 * Hook into actions and filters
 		 */
 		private function init_hooks() {
+
 			add_action( 'after_setup_theme', array( $this, 'include_template_functions' ), 11 );
 			add_action( 'init', array( $this, 'init' ), 0 );
 			register_activation_hook( __FILE__, array( $this, 'activate' ) );
+
+			add_action( 'admin_init', array( $this, 'plugin_update' ) );
 		}
 
 		/**
@@ -355,8 +356,8 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 		 */
 		public function load_plugin_textdomain() {
 
-			$domain = '%TEXTDOMAIN%';
-			$locale = apply_filters( '%TEXTDOMAIN%', get_locale(), $domain );
+			$domain = 'wolf-albums';
+			$locale = apply_filters( 'wolf-albums', get_locale(), $domain );
 			load_textdomain( $domain, WP_LANG_DIR . '/' . $domain . '/' . $domain . '-' . $locale . '.mo' );
 			load_plugin_textdomain( $domain, FALSE, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 		}
@@ -383,6 +384,34 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 		 */
 		public function template_path() {
 			return apply_filters( 'wa_template_path', 'wolf-albums/' );
+		}
+
+		/**
+		 * Plugin update
+		 */
+		public function plugin_update() {
+
+			if ( ! class_exists( 'WP_GitHub_Updater' ) ) {
+				include_once 'inc/admin/updater.php';
+			}
+
+			$repo = 'wolfthemes/wolf-albums';
+
+			$config = array(
+				'slug' => plugin_basename( __FILE__ ),
+				'proper_folder_name' => 'wolf-albums',
+				'api_url' => 'https://api.github.com/repos/' . $repo . '',
+				'raw_url' => 'https://raw.github.com/' . $repo . '/master/',
+				'github_url' => 'https://github.com/' . $repo . '',
+				'zip_url' => 'https://github.com/' . $repo . '/archive/master.zip',
+				'sslverify' => true,
+				'requires' => '5.0',
+				'tested' => '5.5',
+				'readme' => 'README.md',
+				'access_token' => '',
+			);
+
+			new WP_GitHub_Updater( $config );
 		}
 
 	} // end class

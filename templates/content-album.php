@@ -4,14 +4,12 @@
  *
  * Override this template by copying it to yourtheme/wolf-albums/content-albums.php
  *
- * @author %AUTHOR%
- * @package %PACKAGENAME%/Templates
+ * @author WolfThemes
+ * @package WolfAlbums/Templates
  * @since 1.0.4
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+defined( 'ABSPATH' ) || exit;
 
 $term_list = '';
 $post_id   = get_the_ID();
@@ -24,7 +22,7 @@ $term_list = ( $term_list ) ? substr( $term_list, 0, -1 ) : '';
 // $image_size = get_post_meta( $post_id, '_wolf_album_image_size', true );
 $image_size = apply_filters( 'wa_thumbnail_size', 'album-cover' );
 ?>
-<?php if ( wolf_albums_get_thumbnail() && ! post_password_required() ) : ?>
+<?php if ( function_exists('wolf_albums_get_thumbnail') && wolf_albums_get_thumbnail() && ! post_password_required() ) : ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( array( 'album-item-container', $term_list ) ); ?>>
 	<span class="album-item">
 		<a class="entry-link" href="<?php the_permalink(); ?>">

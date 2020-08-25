@@ -1,19 +1,17 @@
 <?php
 /**
- * %NAME% Last Photos Widget
+ * Wolf Albums Last Photos Widget
  *
- * Displays %NAME% widget
+ * Displays Wolf Albums widget
  *
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Widgets
- * @package %PACKAGENAME%/Widgets
- * @version %VERSION%
+ * @package WolfAlbums/Widgets
+ * @version 1.0.7
  * @extends WP_Widget
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+defined( 'ABSPATH' ) || exit;
 
 class WA_Widget_Last_Photos extends WP_Widget {
 
@@ -23,10 +21,10 @@ class WA_Widget_Last_Photos extends WP_Widget {
 	public function __construct() {
 
 		// Widget settings
-		$ops = array( 'classname' => 'widget_last_photos', 'description' => esc_html__( 'Display your last photos', '%TEXTDOMAIN%' ) );
+		$ops = array( 'classname' => 'widget_last_photos', 'description' => esc_html__( 'Display your last photos', 'wolf-albums' ) );
 
 		// Create the widget
-		parent::__construct( 'widget_last_photos', esc_html__( 'Last Photos', '%TEXTDOMAIN%' ), $ops );
+		parent::__construct( 'widget_last_photos', esc_html__( 'Last Photos', 'wolf-albums' ), $ops );
 	}
 
 	/**
@@ -84,22 +82,22 @@ class WA_Widget_Last_Photos extends WP_Widget {
 
 		// Set up some default widget settings
 		$defaults = array(
-			'title' => esc_html__( 'Last Photos', '%TEXTDOMAIN%' ),
+			'title' => esc_html__( 'Last Photos', 'wolf-albums' ),
 			'desc' => '',
 			'count' => 12,
 			);
 		$instance = wp_parse_args( ( array ) $instance, $defaults);
 		?>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ));  ?>"><?php esc_html_e(  'Title' , '%TEXTDOMAIN%' ); ?>:</label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ));  ?>"><?php esc_html_e(  'Title' , 'wolf-albums' ); ?>:</label>
 			<input class="widefat" type="text" id="<?php echo esc_attr( $this->get_field_id( 'title' ));  ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>">
 		</p>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'desc' ) ); ?>"><?php esc_html_e( 'Optional Text', '%TEXTDOMAIN%' ); ?>:</label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'desc' ) ); ?>"><?php esc_html_e( 'Optional Text', 'wolf-albums' ); ?>:</label>
 			<textarea class="widefat"  id="<?php echo esc_attr( $this->get_field_id( 'desc' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'desc' ) ); ?>" ><?php echo $instance['desc']; ?></textarea>
 		</p>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'count' ) ); ?>"><?php esc_html_e( 'Count', '%TEXTDOMAIN%' ); ?>:</label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'count' ) ); ?>"><?php esc_html_e( 'Count', 'wolf-albums' ); ?>:</label>
 			<input class="widefat" type="text" id="<?php echo esc_attr( $this->get_field_id( 'count' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'count' ) ); ?>" value="<?php echo absint( $instance['count'] ); ?>">
 		</p>
 		<?php

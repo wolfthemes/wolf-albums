@@ -1,18 +1,16 @@
 <?php
 /**
- * %NAME% admin functions
+ * Wolf Albums admin functions
  *
  * Functions available on admin
  *
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Core
- * @version %VERSION%
+ * @package WolfAlbums/Core
+ * @version 1.0.7
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Display archive page state

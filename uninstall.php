@@ -1,15 +1,13 @@
 <?php
 /**
- * %NAME% Uninstall
+ * Wolf Albums Uninstall
  *
- * Uninstalling %NAME%
+ * Uninstalling Wolf Albums
  *
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Uninstaller
+ * @package WolfAlbums/Uninstaller
  * @version %VERSION%
  */
 
-if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
-	exit;
-}
+defined( 'WP_UNINSTALL_PLUGIN' ) || exit;

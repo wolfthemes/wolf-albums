@@ -3,7 +3,7 @@ Thanks for downloading Wolf Albums!
 A photo album post type for your site
 
 Plugin page:
-http://wolfthemes.com/plugin/wolf-albums
+https://github.com/wolfthemes/wolf-albums
 
 Being a free product, this plugin is distributed as-is without official support.
 Verified customers however, who have purchased a premium theme

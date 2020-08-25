@@ -1,17 +1,15 @@
 <?php
 /**
- * %NAME% Metaboxes.
+ * Wolf Albums Metaboxes.
  *
  * @class WA_Admin_Metabox
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Admin
- * @package %PACKAGENAME%/Admin
- * @version %VERSION%
+ * @package WolfAlbums/Admin
+ * @version 1.0.7
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'WA_Admin_Metabox' ) ) {
 	/**
@@ -233,8 +231,8 @@ if ( ! class_exists( 'WA_Admin_Metabox' ) ) {
 					?>
 					<div>
 						<input type="text"  name="<?php echo esc_attr( $field_id ); ?>" id="<?php echo esc_attr( $field_id ); ?>" value="<?php echo esc_url( $meta_img); ?>">
-						<br><a href="#" class="button wolf-options-reset-file"><?php esc_html_e( 'Clear', '%TEXTDOMAIN%' ); ?></a>
-						<a href="#" class="button wolf-options-set-file"><?php esc_html_e( 'Choose a file', '%TEXTDOMAIN%' ); ?></a>
+						<br><a href="#" class="button wolf-options-reset-file"><?php esc_html_e( 'Clear', 'wolf-albums' ); ?></a>
+						<a href="#" class="button wolf-options-set-file"><?php esc_html_e( 'Choose a file', 'wolf-albums' ); ?></a>
 					</div>
 
 					<div style="clear:both"></div>
@@ -248,8 +246,8 @@ if ( ! class_exists( 'WA_Admin_Metabox' ) ) {
 					<div>
 						<input type="hidden"  name="<?php echo esc_attr( $field_id ); ?>" id="<?php echo esc_attr( $field_id ); ?>" value="<?php echo absint( $meta_img); ?>">
 						<img style="max-width:250px;<?php if ( 0 == $meta_img ) echo ' display:none;'; ?>" class="wolf-options-img-preview" src="<?php echo esc_url( $meta_img_url ); ?>" alt="<?php echo esc_attr( $field_id ); ?>">
-						<br><a href="#" class="button wolf-options-reset-img"><?php esc_html_e( 'Clear', '%TEXTDOMAIN%' ); ?></a>
-						<a href="#" class="button wolf-options-set-img"><?php esc_html_e( 'Choose an image', '%TEXTDOMAIN%' ); ?></a>
+						<br><a href="#" class="button wolf-options-reset-img"><?php esc_html_e( 'Clear', 'wolf-albums' ); ?></a>
+						<a href="#" class="button wolf-options-set-img"><?php esc_html_e( 'Choose an image', 'wolf-albums' ); ?></a>
 					</div>
 
 					<div style="clear:both"></div>
@@ -281,7 +279,7 @@ if ( ! class_exists( 'WA_Admin_Metabox' ) ) {
 						/* Bg Image */
 						if ( ! in_array( 'color', $exclude_params ) ) {
 						?>
-						<p><?php esc_html_e( 'Background color', '%TEXTDOMAIN%' ); ?></p>
+						<p><?php esc_html_e( 'Background color', 'wolf-albums' ); ?></p>
 						<input name="<?php echo esc_attr( $field_id . '_color' ); ?>" name="<?php echo esc_attr( $field_id . '_color' ); ?>" class="wolf-options-colorpicker" type="text" value="<?php echo esc_attr( $bg_meta_color ); ?>">
 						<br><br>
 						<?php
@@ -289,12 +287,12 @@ if ( ! class_exists( 'WA_Admin_Metabox' ) ) {
 						if ( ! in_array( 'image', $exclude_params ) ) {
 
 						?>
-						<p><?php esc_html_e( 'Background image', '%TEXTDOMAIN%' ); ?></p>
+						<p><?php esc_html_e( 'Background image', 'wolf-albums' ); ?></p>
 						<div>
 							<input type="hidden" name="<?php echo esc_attr( $field_id ); ?>_img" id="<?php echo esc_attr( $field_id ); ?>_img" value="<?php echo esc_attr( $img ); ?>">
 							<img style="max-width:250px;<?php if ( ! $img ) echo ' display:none;'; ?>" class="wolf-options-img-preview" src="<?php echo esc_url( $img_url ); ?>" alt="<?php echo esc_attr( $field_id ); ?>">
-							<br><a href="#" class="button wolf-options-reset-bg"><?php esc_html_e( 'Clear', '%TEXTDOMAIN%' ); ?></a>
-							<a href="#" class="button wolf-options-set-bg"><?php esc_html_e( 'Choose an image', '%TEXTDOMAIN%' ); ?></a>
+							<br><a href="#" class="button wolf-options-reset-bg"><?php esc_html_e( 'Clear', 'wolf-albums' ); ?></a>
+							<a href="#" class="button wolf-options-set-bg"><?php esc_html_e( 'Choose an image', 'wolf-albums' ); ?></a>
 						</div>
 						<br><br>
 						<?php
@@ -306,7 +304,7 @@ if ( ! class_exists( 'WA_Admin_Metabox' ) ) {
 
 						?>
 						<br>
-						<p><?php esc_html_e( 'Background repeat', '%TEXTDOMAIN%' ); ?></p>
+						<p><?php esc_html_e( 'Background repeat', 'wolf-albums' ); ?></p>
 						<select name="<?php echo esc_attr( $field_id ) . '_repeat'; ?>" id="<?php echo esc_attr( $field_id ) . '_repeat'; ?>">
 							<?php foreach ( $options as $o): ?>
 								<option value="<?php echo esc_attr( $o ); ?>" <?php if ( $o == $bg_meta_repeat ) echo 'selected="selected"'; ?>><?php echo esc_attr( $o ); ?></option>
@@ -330,7 +328,7 @@ if ( ! class_exists( 'WA_Admin_Metabox' ) ) {
 
 						?>
 						<br><br>
-						<p><?php esc_html_e( 'Background position', '%TEXTDOMAIN%' ); ?></p>
+						<p><?php esc_html_e( 'Background position', 'wolf-albums' ); ?></p>
 						<select name="<?php echo esc_attr( $field_id ) . '_position'; ?>" id="<?php echo esc_attr( $field_id ) . '_position'; ?>">
 							<?php foreach ( $options as $o): ?>
 								<option value="<?php echo esc_attr( $o ); ?>" <?php if ( $o == $bg_meta_position ) echo 'selected="selected"'; ?>><?php echo esc_attr( $o ); ?></option>
@@ -343,14 +341,14 @@ if ( ! class_exists( 'WA_Admin_Metabox' ) ) {
 						/* size
 						--------------------*/
 						$options = array(
-							'cover' => esc_html__( 'cover (resize)', '%TEXTDOMAIN%' ),
-							'normal' => esc_html__( 'normal', '%TEXTDOMAIN%' ),
-							'resize' => esc_html__( 'responsive (hard resize)', '%TEXTDOMAIN%' ),
+							'cover' => esc_html__( 'cover (resize)', 'wolf-albums' ),
+							'normal' => esc_html__( 'normal', 'wolf-albums' ),
+							'resize' => esc_html__( 'responsive (hard resize)', 'wolf-albums' ),
 						);
 
 						?>
 						<br><br>
-						<p><?php esc_html_e( 'Background size', '%TEXTDOMAIN%' ); ?></p>
+						<p><?php esc_html_e( 'Background size', 'wolf-albums' ); ?></p>
 						<select name="<?php echo esc_attr( $field_id ) . '_size'; ?>" id="<?php echo esc_attr( $field_id ) . '_size'; ?>">
 							<?php foreach ( $options as $k => $v ) : ?>
 								<option value="<?php echo esc_attr( $k ); ?>" <?php if ( $k == $bg_meta_size ) echo 'selected="selected"'; ?>><?php echo sanitize_text_field( $v ); ?></option>
@@ -361,7 +359,7 @@ if ( ! class_exists( 'WA_Admin_Metabox' ) ) {
 						if ( $parallax ) {
 							?>
 							<br><br>
-							<p><strong><?php esc_html_e( 'Parallax', '%TEXTDOMAIN%' ); ?></strong></p>
+							<p><strong><?php esc_html_e( 'Parallax', 'wolf-albums' ); ?></strong></p>
 							<input <?php if ( $bg_meta_parallax ) echo 'checked="checked"'; ?> type="checkbox" name="<?php echo esc_attr( $field_id ) . '_parallax'; ?>" id="<?php echo esc_attr( $field_id ) . '_parallax'; ?>">
 							<?php
 						}
@@ -379,7 +377,7 @@ if ( ! class_exists( 'WA_Admin_Metabox' ) ) {
 
 						if ( ! in_array( 'color', $exclude_params ) ) {
 						?>
-						<p><?php esc_html_e( 'Font color', '%TEXTDOMAIN%' ); ?></p>
+						<p><?php esc_html_e( 'Font color', 'wolf-albums' ); ?></p>
 						<input name="<?php echo esc_attr( $field_id ) . '_font_color'; ?>" name="<?php echo  $field_id . '_font_color'; ?>" class="wolf-options-colorpicker" type="text" value="<?php echo esc_attr( $color ); ?>">
 						<br><br>
 						<?php
@@ -389,9 +387,9 @@ if ( ! class_exists( 'WA_Admin_Metabox' ) ) {
 							global $wolf_google_fonts;
 							$wolf_fonts = $wolf_google_fonts;
 						?>
-							<p><?php esc_html_e( 'Font Family', '%TEXTDOMAIN%' ); ?></p>
+							<p><?php esc_html_e( 'Font Family', 'wolf-albums' ); ?></p>
 							<select name="<?php echo esc_attr( $field_id ) . '_font_name'; ?>" id="<?php echo esc_attr( $field_id ) . '_font_name'; ?>">
-								<option value=''><?php esc_html_e( 'default', '%TEXTDOMAIN%' ); ?></option>
+								<option value=''><?php esc_html_e( 'default', 'wolf-albums' ); ?></option>
 								<?php foreach ( $wolf_fonts as $k =>$v ) : ?>
 									<option value="<?php echo esc_attr( $k ); ?>" <?php if ( $k == $name ) echo 'selected="selected"'; ?>><?php echo esc_attr( $k ); ?></option>
 								<?php endforeach; ?>
@@ -402,54 +400,54 @@ if ( ! class_exists( 'WA_Admin_Metabox' ) ) {
 						if ( ! in_array( 'weight', $exclude_params ) ) {
 						?>
 							<br><br>
-							<p><?php esc_html_e( 'Font weight', '%TEXTDOMAIN%' ); ?></p>
+							<p><?php esc_html_e( 'Font weight', 'wolf-albums' ); ?></p>
 							<input type="text" name="<?php echo esc_attr( $field_id ) ?>_font_weight" id="<?php echo esc_attr( $field_id ); ?>_font_weight" value="<?php echo esc_attr( $weight ); ?>" >
-							<br><span class="description"><?php esc_html_e( 'For example: 400 is normal, 700 is bold.The available font weights depend on the font.<br>Leave empty to use the theme default style', '%TEXTDOMAIN%' ); ?></span>
+							<br><span class="description"><?php esc_html_e( 'For example: 400 is normal, 700 is bold.The available font weights depend on the font.<br>Leave empty to use the theme default style', 'wolf-albums' ); ?></span>
 						<?php
 						}
 
 						if ( ! in_array( 'transform', $exclude_params ) ) {
 							$options = array(
-								'' => esc_html__( 'auto', '%TEXTDOMAIN%' ),
-								'none' => esc_html__( 'none', '%TEXTDOMAIN%' ),
-								'uppercase' => esc_html__( 'uppercase', '%TEXTDOMAIN%' ),
+								'' => esc_html__( 'auto', 'wolf-albums' ),
+								'none' => esc_html__( 'none', 'wolf-albums' ),
+								'uppercase' => esc_html__( 'uppercase', 'wolf-albums' ),
 							);
 						?>
 							<br><br>
-							<p><?php esc_html_e( 'Font transform', '%TEXTDOMAIN%' ); ?></p>
+							<p><?php esc_html_e( 'Font transform', 'wolf-albums' ); ?></p>
 							<select name="<?php echo esc_attr( $field_id ) . '_font_transform'; ?>" id="<?php echo esc_attr( $field_id ) . '_font_transform'; ?>">
 								<?php foreach ( $options as $k => $v ) : ?>
 									<option value="<?php echo esc_attr( $k ); ?>" <?php if ( $k == $transform ) echo 'selected="selected"'; ?>><?php echo sanitize_text_field( $v ); ?></option>
 								<?php endforeach; ?>
 							</select>
-							<br><span class="description"><?php esc_html_e( '"auto" is the default style in the theme options', '%TEXTDOMAIN%' ); ?></span>
+							<br><span class="description"><?php esc_html_e( '"auto" is the default style in the theme options', 'wolf-albums' ); ?></span>
 						<?php
 						}
 
 						if ( ! in_array( 'style', $exclude_params ) ) {
 							$options = array(
-								'' => esc_html__( 'auto', '%TEXTDOMAIN%' ),
-								'normal' => esc_html__( 'normal', '%TEXTDOMAIN%' ),
-								'italic' => esc_html__( 'italic', '%TEXTDOMAIN%' ),
+								'' => esc_html__( 'auto', 'wolf-albums' ),
+								'normal' => esc_html__( 'normal', 'wolf-albums' ),
+								'italic' => esc_html__( 'italic', 'wolf-albums' ),
 							);
 						?>
 							<br><br>
-							<p><?php esc_html_e( 'Font style', '%TEXTDOMAIN%' ); ?></p>
+							<p><?php esc_html_e( 'Font style', 'wolf-albums' ); ?></p>
 							<select name="<?php echo esc_attr( $field_id ) . '_font_style'; ?>" id="<?php echo esc_attr( $field_id ) . '_font_style'; ?>">
 								<?php foreach ( $options as $k => $v ) : ?>
 									<option value="<?php echo esc_attr( $k ); ?>" <?php if ( $k == $style ) echo 'selected="selected"'; ?>><?php echo sanitize_text_field( $v ); ?></option>
 								<?php endforeach; ?>
 							</select>
-							<br><span class="description"><?php esc_html_e( '"auto" is the default style defined in the theme options', '%TEXTDOMAIN%' ); ?></span>
+							<br><span class="description"><?php esc_html_e( '"auto" is the default style defined in the theme options', 'wolf-albums' ); ?></span>
 						<?php
 						}
 
 						if ( ! in_array( 'letter_spacing', $exclude_params ) ) {
 						?>
 							<br><br>
-							<p><?php esc_html_e( 'Font letter spacing (omit px)', '%TEXTDOMAIN%' ); ?></p>
+							<p><?php esc_html_e( 'Font letter spacing (omit px)', 'wolf-albums' ); ?></p>
 							<input type="text" name="<?php echo esc_attr( $field_id ) ?>_font_letter_spacing" id="<?php echo esc_attr( $field_id ); ?>_font_letter_spacing" value="<?php echo esc_attr( $letter_spacing ); ?>">
-							<br><span class="description"><?php esc_html_e( 'Leave empty to use the style defined in the theme options', '%TEXTDOMAIN%' ); ?></span>
+							<br><span class="description"><?php esc_html_e( 'Leave empty to use the style defined in the theme options', 'wolf-albums' ); ?></span>
 						<?php
 						}
 
@@ -471,35 +469,35 @@ if ( ! class_exists( 'WA_Admin_Metabox' ) ) {
 						}
 						?>
 						<div>
-							<p><strong><?php esc_html_e( 'mp4 URL', '%TEXTDOMAIN%' ); ?></strong></p>
+							<p><strong><?php esc_html_e( 'mp4 URL', 'wolf-albums' ); ?></strong></p>
 							<input type="text"  name="<?php echo esc_attr( $field_id ); ?>_mp4" id="<?php echo esc_attr( $field_id ); ?>_mp4" value="<?php echo esc_url( $mp4 ); ?>">
-							<br><a href="#" class="button wolf-options-reset-file"><?php esc_html_e( 'Clear', '%TEXTDOMAIN%' ); ?></a>
-							<a href="#" class="button wolf-options-set-file"><?php esc_html_e( 'Choose a file', '%TEXTDOMAIN%' ); ?></a>
+							<br><a href="#" class="button wolf-options-reset-file"><?php esc_html_e( 'Clear', 'wolf-albums' ); ?></a>
+							<a href="#" class="button wolf-options-set-file"><?php esc_html_e( 'Choose a file', 'wolf-albums' ); ?></a>
 							<br><br>
 						</div>
 
 						<div>
-							<p><strong><?php esc_html_e( 'webm URL', '%TEXTDOMAIN%' ); ?></strong></p>
+							<p><strong><?php esc_html_e( 'webm URL', 'wolf-albums' ); ?></strong></p>
 							<input type="text"  name="<?php echo esc_attr( $field_id ); ?>_webm" id="<?php echo esc_attr( $field_id ); ?>_webm" value="<?php echo esc_url( $webm ); ?>">
-							<br><a href="#" class="button wolf-options-reset-file"><?php esc_html_e( 'Clear', '%TEXTDOMAIN%' ); ?></a>
-							<a href="#" class="button wolf-options-set-file"><?php esc_html_e( 'Choose a file', '%TEXTDOMAIN%' ); ?></a>
+							<br><a href="#" class="button wolf-options-reset-file"><?php esc_html_e( 'Clear', 'wolf-albums' ); ?></a>
+							<a href="#" class="button wolf-options-set-file"><?php esc_html_e( 'Choose a file', 'wolf-albums' ); ?></a>
 							<br><br>
 						</div>
 
 						<div>
-							<p><strong><?php esc_html_e( 'ogv URL', '%TEXTDOMAIN%' ); ?></strong></p>
+							<p><strong><?php esc_html_e( 'ogv URL', 'wolf-albums' ); ?></strong></p>
 							<input type="text"  name="<?php echo esc_attr( $field_id ); ?>_ogv" id="<?php echo esc_attr( $field_id ); ?>_ogv" value="<?php echo esc_url( $ogv ); ?>">
-							<br><a href="#" class="button wolf-options-reset-file"><?php esc_html_e( 'Clear', '%TEXTDOMAIN%' ); ?></a>
-							<a href="#" class="button wolf-options-set-file"><?php esc_html_e( 'Choose a file', '%TEXTDOMAIN%' ); ?></a>
+							<br><a href="#" class="button wolf-options-reset-file"><?php esc_html_e( 'Clear', 'wolf-albums' ); ?></a>
+							<a href="#" class="button wolf-options-set-file"><?php esc_html_e( 'Choose a file', 'wolf-albums' ); ?></a>
 							<br><br>
 						</div>
 
 						<div>
-						<p><strong><?php esc_html_e( 'Video Image Fallback', '%TEXTDOMAIN%' ); ?></strong></p>
+						<p><strong><?php esc_html_e( 'Video Image Fallback', 'wolf-albums' ); ?></strong></p>
 						<input type="hidden"  name="<?php echo esc_attr( $field_id ); ?>_img" id="<?php echo esc_attr( $field_id ); ?>_img" value="<?php echo esc_attr( $img ); ?>">
 						<img style="max-width:200px;<?php echo ( ! $img ) ? 'display:none;' : '' ?>" src="<?php echo esc_url( $img_url ); ?>" class="wolf-options-img-preview">
-						<br><a href="#" class="button wolf-options-reset-img"><?php esc_html_e( 'Clear', '%TEXTDOMAIN%' ); ?></a>
-						<a href="#" class="button wolf-options-set-img"><?php esc_html_e( 'Choose an image', '%TEXTDOMAIN%' ); ?></a>
+						<br><a href="#" class="button wolf-options-reset-img"><?php esc_html_e( 'Clear', 'wolf-albums' ); ?></a>
+						<a href="#" class="button wolf-options-set-img"><?php esc_html_e( 'Choose an image', 'wolf-albums' ); ?></a>
 						</div>
 						<?php
 

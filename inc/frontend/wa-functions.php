@@ -1,12 +1,12 @@
 <?php
 /**
- * %NAME% Functions
+ * Wolf Albums Functions
  *
- * %NAME% front-end functions
+ * Wolf Albums front-end functions
  *
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Functions
+ * @package WolfAlbums/Functions
  * @since 1.2.2
  */
 

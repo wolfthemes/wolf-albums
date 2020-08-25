@@ -1,33 +1,31 @@
 <?php
 /**
- * %NAME% register post type
+ * Wolf Albums register post type
  *
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Admin
- * @version %VERSION%
+ * @package WolfAlbums/Admin
+ * @version 1.0.7
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+defined( 'ABSPATH' ) || exit;
 
 /* Register Gallery post type */
-$labels = array(
-	'name' => esc_html__( 'Galleries', '%TEXTDOMAIN%' ),
-	'singular_name' => esc_html__( 'Gallery', '%TEXTDOMAIN%' ),
-	'add_new' => esc_html__( 'Add New', '%TEXTDOMAIN%' ),
-	'add_new_item' => esc_html__( 'Add New Gallery', '%TEXTDOMAIN%' ),
-	'all_items'  => esc_html__( 'All Galleries', '%TEXTDOMAIN%' ),
-	'edit_item' => esc_html__( 'Edit Gallery', '%TEXTDOMAIN%' ),
-	'new_item' => esc_html__( 'New Gallery', '%TEXTDOMAIN%' ),
-	'view_item' => esc_html__( 'View Gallery', '%TEXTDOMAIN%' ),
-	'search_items' => esc_html__( 'Search Galleries', '%TEXTDOMAIN%' ),
-	'not_found' => esc_html__( 'No Galleries found', '%TEXTDOMAIN%' ),
-	'not_found_in_trash' => esc_html__( 'No Galleries found in Trash', '%TEXTDOMAIN%' ),
+$labels = apply_filters( 'wolf_gallery_post_type_labels', array(
+	'name' => esc_html__( 'Galleries', 'wolf-albums' ),
+	'singular_name' => esc_html__( 'Gallery', 'wolf-albums' ),
+	'add_new' => esc_html__( 'Add New', 'wolf-albums' ),
+	'add_new_item' => esc_html__( 'Add New Gallery', 'wolf-albums' ),
+	'all_items'  => esc_html__( 'All Galleries', 'wolf-albums' ),
+	'edit_item' => esc_html__( 'Edit Gallery', 'wolf-albums' ),
+	'new_item' => esc_html__( 'New Gallery', 'wolf-albums' ),
+	'view_item' => esc_html__( 'View Gallery', 'wolf-albums' ),
+	'search_items' => esc_html__( 'Search Galleries', 'wolf-albums' ),
+	'not_found' => esc_html__( 'No Galleries found', 'wolf-albums' ),
+	'not_found_in_trash' => esc_html__( 'No Galleries found in Trash', 'wolf-albums' ),
 	'parent_item_colon' => '',
-	'menu_name' => esc_html__( 'Galleries', '%TEXTDOMAIN%' ),
-);
+	'menu_name' => esc_html__( 'Galleries', 'wolf-albums' ),
+) );
 
 $args = array(
 	'labels' => $labels,
@@ -44,7 +42,7 @@ $args = array(
 	'taxonomies' => array(),
 	'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'custom-fields', 'comments' ),
 	'exclude_from_search' => false,
-	'description' => esc_html__( 'Present your albums', '%TEXTDOMAIN%' ),
+	'description' => esc_html__( 'Present your albums', 'wolf-albums' ),
 	'menu_icon' => 'dashicons-images-alt2',
 );
 

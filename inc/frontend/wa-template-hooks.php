@@ -1,18 +1,16 @@
 <?php
 /**
- * %NAME% Hooks
+ * Wolf Albums Hooks
  *
- * Action/filter hooks used for %PACKAGENAME% functions/templates
+ * Action/filter hooks used for WolfAlbums functions/templates
  *
- * @author %AUTHOR%
+ * @author WolfThemes
  * @category Core
- * @package %PACKAGENAME%/Templates
+ * @package WolfAlbums/Templates
  * @since 1.0.4
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Body class
