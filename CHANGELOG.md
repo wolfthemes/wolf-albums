@@ -1,3 +1,4 @@
+# Changelog
 #### 2nd July 2018 - Version 1.3.0
 
 * Tweak: Added "wolf_gallery_post_type_labels" filter

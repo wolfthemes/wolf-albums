@@ -1,14 +1,12 @@
-Thanks for downloading Wolf Albums!
+# Thanks for downloading Wolf Albums!
 
-A photo album post type for your site
+A photo gallery post type for your site
 
-Plugin page:
+## Plugin page
 https://github.com/wolfthemes/wolf-albums
 
-Being a free product, this plugin is distributed as-is without official support.
-Verified customers however, who have purchased a premium theme
-at http://themeforest.net/user/Wolf-Themes/portfolio?ref=Wolf-Themes
-will have access to support for this plugin in the forums
-http://wlfthm.es/help
+## Support
+Verified customers who have purchased a premium theme on [ThemeForest](http://wlfthm.es/tf)
+will have access to support for this plugin in the [forums](http://wlfthm.es/help).
 
 Have fun!

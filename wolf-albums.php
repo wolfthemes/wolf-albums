@@ -2,8 +2,8 @@
 /**
  * Plugin Name: Wolf Albums
  * Plugin URI: https://wlfthm.es/wolf-albums
- * Description: A photo album post type for your site
- * Version: 1.3.0
+ * Description: A photo gallery post type for your site
+ * Version: 1.3.1
  * Author: WolfThemes
  * Author URI: https://wolfthemes.com
  * Requires at least: 5.0
@@ -16,22 +16,9 @@
  * @category Core
  * @author WolfThemes
  *
- * Being a free product, this plugin is distributed as-is without official support.
- * Verified customers however, who have purchased a premium theme
- * at https://wlfthm.es/tf/
+ * Verified customers who have purchased a premium theme at https://wlfthm.es/tf/
  * will have access to support for this plugin in the forums
  * https://wlfthm.es/help/
- *
- * Copyright (C) 2013 Constantin Saguin
- * This WordPress Plugin is a free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * It is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * See https://www.gnu.org/licenses/gpl-3.0.html
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -57,10 +44,10 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 		/**
 		 * @var string
 		 */
-		public $version = '1.3.0';
+		public $version = '1.3.1';
 
 		/**
-		 * @var %NAME% The single instance of the class
+		 * @var Wolf Albums The single instance of the class
 		 */
 		protected static $_instance = null;
 
@@ -80,13 +67,13 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 		public $template_url;
 
 		/**
-		 * Main %NAME% Instance
+		 * Main Wolf Albums Instance
 		 *
-		 * Ensures only one instance of %NAME% is loaded or can be loaded.
+		 * Ensures only one instance of Wolf Albums is loaded or can be loaded.
 		 *
 		 * @static
 		 * @see WG()
-		 * @return %NAME% - Main instance
+		 * @return Wolf Albums - Main instance
 		 */
 		public static function instance() {
 			if ( is_null( self::$_instance ) ) {
@@ -96,7 +83,7 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 		}
 
 		/**
-		 * %NAME% Constructor.
+		 * Wolf Albums Constructor.
 		 */
 		public function __construct() {
 
@@ -122,7 +109,7 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 
 				printf(
 					esc_html__( '%1$s needs at least PHP %2$s installed on your server. You have version %3$s currently installed. Please contact your hosting service provider if you\'re not able to update PHP by yourself.', 'wolf-albums' ),
-					'%NAME%',
+					'Wolf Albums',
 					$this->required_php_version,
 					phpversion()
 				);
@@ -242,7 +229,7 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 		}
 
 		/**
-		 * Function used to Init %NAME% Template Functions - This makes them pluggable by plugins and themes.
+		 * Function used to Init Wolf Albums Template Functions - This makes them pluggable by plugins and themes.
 		 */
 		public function include_template_functions() {
 			include_once( 'inc/frontend/wa-template-functions.php' );
@@ -264,7 +251,7 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 		}
 
 		/**
-		 * Init %NAME% when WordPress Initialises.
+		 * Init Wolf Albums when WordPress Initialises.
 		 */
 		public function init() {
 

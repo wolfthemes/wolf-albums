@@ -7,7 +7,7 @@
  * @author WolfThemes
  * @category Core
  * @package WolfAlbums/Uninstaller
- * @version %VERSION%
+ * @version 1.0.0
  */
 
 defined( 'WP_UNINSTALL_PLUGIN' ) || exit;

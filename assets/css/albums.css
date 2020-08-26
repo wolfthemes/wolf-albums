@@ -45,6 +45,8 @@
   text-shadow: none;
   text-decoration: none;
   -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
   transition: 0.5s;
   display: inline;
   padding: 4px 8px;
@@ -125,6 +127,8 @@
 .shortcode-gallery-grid span.album-thumb img,
 .shortcode-gallery-grid span.album-thumb p {
   -webkit-transition: ease-out 0.2s;
+  -moz-transition: ease-out 0.2s;
+  -o-transition: ease-out 0.2s;
   transition: ease-out 0.2s;
 }
 .albums span.album-thumb h5,
@@ -133,6 +137,8 @@
   line-height: 1.5;
   margin-bottom: 5px;
   -webkit-transition: ease-out 0.3s;
+  -moz-transition: ease-out 0.3s;
+  -o-transition: ease-out 0.3s;
   transition: ease-out 0.3s;
   color: white !important;
 }
@@ -163,6 +169,8 @@
   margin-bottom: 0 !important;
   font-weight: normal;
   -webkit-transition-delay: 0.2s;
+  -moz-transition-delay: 0.2s;
+  -o-transition-delay: 0.2s;
   transition-delay: 0.2s;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
@@ -211,6 +219,7 @@
 
 .widget_last_photos a {
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   display: inline-block;
   padding: 0px 2px;
@@ -218,6 +227,7 @@
 }
 .widget_last_photos a:after, .widget_last_photos a:before {
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 .widget_last_photos a img {
