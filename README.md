@@ -1,6 +1,6 @@
-# Thanks for downloading Wolf Albums!
+# Thanks for downloading Photo Albums!
 
-A photo gallery post type for your site
+A photo gallery post type for your site.
 
 ## Plugin page
 https://github.com/wolfthemes/wolf-albums

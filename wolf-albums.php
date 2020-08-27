@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: Wolf Albums
+ * Plugin Name: Photo Albums
  * Plugin URI: https://wlfthm.es/wolf-albums
- * Description: A photo gallery post type for your site
+ * Description: A photo gallery post type for your site.
  * Version: 1.3.1
  * Author: WolfThemes
  * Author URI: https://wolfthemes.com
@@ -51,15 +51,12 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 		 */
 		protected static $_instance = null;
 
-		/**
-		 * @var string
-		 */
-		private $update_url = 'https://plugins.wolfthemes.com/update';
+
 
 		/**
 		 * @var the support forum URL
 		 */
-		private $support_url = 'https://docs.wolfthemes.com/';
+		private $support_url = 'https://wlfthm.es/help';
 
 		/**
 		 * @var string
@@ -167,7 +164,6 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 				'WA_SLUG' => plugin_basename( dirname( __FILE__ ) ),
 				'WA_PATH' => plugin_basename( __FILE__ ),
 				'WA_VERSION' => $this->version,
-				'WA_UPDATE_URL' => $this->update_url,
 				'WA_SUPPORT_URL' => $this->support_url,
 				'WA_DOC_URI' => 'https://docs.wolfthemes.com/documentation/plugins/' . plugin_basename( dirname( __FILE__ ) ),
 				'WA_WOLF_DOMAIN' => 'wolfthemes.com',
