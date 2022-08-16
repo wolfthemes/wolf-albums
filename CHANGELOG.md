@@ -1,5 +1,9 @@
 # Changelog
 
+#### 16th August 2022 - Version 1.3.2
+
+-   Fix: Widget panel error
+
 #### 26th August 2020 - Version 1.3.1
 
 -   Tweak: Unbrand plugin name

@@ -42,7 +42,7 @@ class WA_Widget_Last_Photos extends WP_Widget {
 
 		$desc = ( isset( $instance['desc'] ) ) ? sanitize_title( $instance['desc'] ) : '';
 		$count = isset( $instance['count'] ) ? absint( $instance['count'] ) : 12;
-		
+
 		echo $before_widget;
 		if (! empty( $title ) ) echo $before_title . $title . $after_title;
 		if (! empty( $desc ) ) {
@@ -50,7 +50,7 @@ class WA_Widget_Last_Photos extends WP_Widget {
 			echo $desc;
 			echo '</p>';
 		}
-		echo wolf_get_photos_widget( $count );
+		echo $this->get_photos_widget( $count );
 		echo $after_widget;
 
 	}
@@ -103,4 +103,67 @@ class WA_Widget_Last_Photos extends WP_Widget {
 		<?php
 	}
 
+	/**
+	 * Widget function
+	 *
+	 * Displays the show list in the widget
+	 *
+	 * @param int $count, string $url, bool $link
+	 * @return string
+	 */
+	function get_photos_widget( $count = 10 ) {
+		ob_start();
+		global $wpdb;
+		$grid = array();
+		$query = new WP_Query( array(
+				'post_type' => 'gallery',
+				'posts_per_page' => -1,
+			)
+		);
+
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+
+				$content = get_the_content();
+				$string = preg_match( '/ids=\"(.*)\"/i', $content, $result );
+
+				if ( isset( $result[1] ) ) {
+					$string = str_replace(' ', '', $result[1] );
+					$image_ids = explode( ',', $string );
+
+					foreach( $image_ids as $image_id ) {
+
+						if ( get_post_status( $image_id ) ) {
+							$img_src_mini = wp_get_attachment_image_src( $image_id, 'thumbnail');
+							$img_src_full = wp_get_attachment_image_src( $image_id, 'full-size');
+							$image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true);
+							$grid[] = array(
+								'thumb' => $img_src_mini[0],
+								'full' => $img_src_full[0],
+								'image_alt' => $image_alt,
+							);
+						}
+					}
+				}
+			}
+
+			if ( count($grid) < $count)
+				$count = count($grid);
+
+			for ( $i = 0; $i < $count; $i++ ) {
+				echo '<a rel="last-photos" href="'. esc_url( $grid[ $i ]['full'] ).'" class="last-photos-thumbnails"><img src="'.esc_url( $grid[ $i ]['thumb'] ).'" alt="'. esc_attr( $grid[ $i ]['image_alt'] ).'"></a>';
+			}
+			echo '<div style="clear:both"></div>';
+
+
+		} else {
+			echo "<p>";
+			esc_html_e( 'No photo uploaded yet.', 'wolf-albums' );
+			echo "</p>";
+		}
+
+		wp_reset_postdata();
+		return ob_get_clean();
+	}
 }
