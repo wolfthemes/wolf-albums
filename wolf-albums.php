@@ -3,11 +3,11 @@
  * Plugin Name: Photo Albums
  * Plugin URI: https://wlfthm.es/wolf-albums
  * Description: A photo gallery post type for your site.
- * Version: 1.3.2
+ * Version: 1.3.3
  * Author: WolfThemes
  * Author URI: https://wolfthemes.com
- * Requires at least: 5.0
- * Tested up to: 5.5
+ * Requires at least: 6.0
+ * Tested up to: 6.8
  *
  * Text Domain: wolf-albums
  * Domain Path: /languages/
@@ -44,7 +44,7 @@ if ( ! class_exists( 'Wolf_Albums' ) ) {
 		/**
 		 * @var string
 		 */
-		public $version = '1.3.2';
+		public $version = '1.3.3';
 
 		/**
 		 * @var Wolf Albums The single instance of the class

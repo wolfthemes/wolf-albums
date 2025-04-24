@@ -1,5 +1,9 @@
 # Changelog
 
+#### 24th April 2025 - Version 1.3.3
+
+-   Fix: Prevent loading_plugin_text notice message
+
 #### 16th August 2022 - Version 1.3.2
 
 -   Fix: Widget panel error

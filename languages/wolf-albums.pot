@@ -1,14 +1,14 @@
-# Copyright (C) 2022 WolfThemes
+# Copyright (C) 2025 WolfThemes
 # This file is distributed under the same license as the Photo Albums package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Photo Albums 1.3.2\n"
+"Project-Id-Version: Photo Albums 1.3.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wolf-albums\n"
-"POT-Creation-Date: 2022-08-16 08:55:14+00:00\n"
+"POT-Creation-Date: 2025-04-24 12:47:20+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2022-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2025-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 0.5.4\n"
@@ -61,7 +61,6 @@ msgid "B"
 msgstr ""
 
 #: inc/admin/class-wa-admin.php:108
-#: pack/wolf-albums/inc/admin/class-wa-admin.php:108
 msgid ""
 "says : <em>Almost done! you need to <a href=\"%1$s\">create a page</a> for "
 "your albums or <a href=\"%2$s\">select an existing page</a> in the plugin "
@@ -69,7 +68,6 @@ msgid ""
 msgstr ""
 
 #: inc/admin/class-wa-admin.php:126
-#: pack/wolf-albums/inc/admin/class-wa-admin.php:126
 msgid ""
 "<br><br>\r\n"
 "\t\t\t\t\t<a href=\"%1$s\" class=\"button button-primary\">Create a "
@@ -82,33 +80,26 @@ msgid ""
 msgstr ""
 
 #: inc/admin/class-wa-admin.php:178
-#: pack/wolf-albums/inc/admin/class-wa-admin.php:178
 msgid "Albums"
 msgstr ""
 
 #: inc/admin/class-wa-admin.php:191
-#: pack/wolf-albums/inc/admin/class-wa-admin.php:191
 msgid "Your albums page has been created succesfully"
 msgstr ""
 
 #: inc/admin/class-wa-admin.php:213
-#: pack/wolf-albums/inc/admin/class-wa-admin.php:213
 msgid "You are currently editing the page that shows the albums."
 msgstr ""
 
 #: inc/admin/class-wa-admin.php:259
-#: pack/wolf-albums/inc/admin/class-wa-admin.php:259
 msgid "Thumbnail"
 msgstr ""
 
 #: inc/admin/class-wa-admin.php:276
-#: pack/wolf-albums/inc/admin/class-wa-admin.php:276
 msgid "Edit \"%s\""
 msgstr ""
 
 #: inc/admin/class-wa-admin.php:286 inc/admin/class-wa-options.php:38
-#: pack/wolf-albums/inc/admin/class-wa-admin.php:286
-#: pack/wolf-albums/inc/admin/class-wa-options.php:38
 msgid "Settings"
 msgstr ""
 
@@ -116,480 +107,380 @@ msgstr ""
 #: inc/admin/class-wa-metabox.php:294 inc/admin/class-wa-metabox.php:474
 #: inc/admin/class-wa-metabox.php:482 inc/admin/class-wa-metabox.php:490
 #: inc/admin/class-wa-metabox.php:499
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:234
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:249
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:294
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:474
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:482
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:490
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:499
 msgid "Clear"
 msgstr ""
 
 #: inc/admin/class-wa-metabox.php:235 inc/admin/class-wa-metabox.php:475
 #: inc/admin/class-wa-metabox.php:483 inc/admin/class-wa-metabox.php:491
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:235
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:475
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:483
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:491
 msgid "Choose a file"
 msgstr ""
 
 #: inc/admin/class-wa-metabox.php:250 inc/admin/class-wa-metabox.php:295
 #: inc/admin/class-wa-metabox.php:500
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:250
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:295
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:500
 msgid "Choose an image"
 msgstr ""
 
 #: inc/admin/class-wa-metabox.php:282
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:282
 msgid "Background color"
 msgstr ""
 
 #: inc/admin/class-wa-metabox.php:290
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:290
 msgid "Background image"
 msgstr ""
 
 #: inc/admin/class-wa-metabox.php:307
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:307
 msgid "Background repeat"
 msgstr ""
 
 #: inc/admin/class-wa-metabox.php:331
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:331
 msgid "Background position"
 msgstr ""
 
 #: inc/admin/class-wa-metabox.php:344
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:344
 msgid "cover (resize)"
 msgstr ""
 
 #: inc/admin/class-wa-metabox.php:345 inc/admin/class-wa-metabox.php:430
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:345
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:430
 msgid "normal"
 msgstr ""
 
 #: inc/admin/class-wa-metabox.php:346
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:346
 msgid "responsive (hard resize)"
 msgstr ""
 
 #: inc/admin/class-wa-metabox.php:351
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:351
 msgid "Background size"
 msgstr ""
 
 #: inc/admin/class-wa-metabox.php:362
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:362
 msgid "Parallax"
 msgstr ""
 
 #: inc/admin/class-wa-metabox.php:380
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:380
 msgid "Font color"
 msgstr ""
 
 #: inc/admin/class-wa-metabox.php:390
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:390
 msgid "Font Family"
 msgstr ""
 
 #: inc/admin/class-wa-metabox.php:392
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:392
 msgid "default"
 msgstr ""
 
 #: inc/admin/class-wa-metabox.php:403
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:403
 msgid "Font weight"
 msgstr ""
 
 #: inc/admin/class-wa-metabox.php:405
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:405
 msgid ""
 "For example: 400 is normal, 700 is bold.The available font weights depend "
 "on the font.<br>Leave empty to use the theme default style"
 msgstr ""
 
 #: inc/admin/class-wa-metabox.php:411 inc/admin/class-wa-metabox.php:429
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:411
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:429
 msgid "auto"
 msgstr ""
 
 #: inc/admin/class-wa-metabox.php:412
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:412
 msgid "none"
 msgstr ""
 
 #: inc/admin/class-wa-metabox.php:413
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:413
 msgid "uppercase"
 msgstr ""
 
 #: inc/admin/class-wa-metabox.php:417
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:417
 msgid "Font transform"
 msgstr ""
 
 #: inc/admin/class-wa-metabox.php:423
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:423
 msgid "\"auto\" is the default style in the theme options"
 msgstr ""
 
 #: inc/admin/class-wa-metabox.php:431
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:431
 msgid "italic"
 msgstr ""
 
 #: inc/admin/class-wa-metabox.php:435
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:435
 msgid "Font style"
 msgstr ""
 
 #: inc/admin/class-wa-metabox.php:441
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:441
 msgid "\"auto\" is the default style defined in the theme options"
 msgstr ""
 
 #: inc/admin/class-wa-metabox.php:448
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:448
 msgid "Font letter spacing (omit px)"
 msgstr ""
 
 #: inc/admin/class-wa-metabox.php:450
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:450
 msgid "Leave empty to use the style defined in the theme options"
 msgstr ""
 
 #: inc/admin/class-wa-metabox.php:472
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:472
 msgid "mp4 URL"
 msgstr ""
 
 #: inc/admin/class-wa-metabox.php:480
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:480
 msgid "webm URL"
 msgstr ""
 
 #: inc/admin/class-wa-metabox.php:488
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:488
 msgid "ogv URL"
 msgstr ""
 
 #: inc/admin/class-wa-metabox.php:496
-#: pack/wolf-albums/inc/admin/class-wa-metabox.php:496
 msgid "Video Image Fallback"
 msgstr ""
 
 #: inc/admin/class-wa-options.php:39
-#: pack/wolf-albums/inc/admin/class-wa-options.php:39
 msgid "Shortcode"
 msgstr ""
 
 #: inc/admin/class-wa-options.php:67 inc/admin/wa-admin-functions.php:26
-#: pack/wolf-albums/inc/admin/class-wa-options.php:67
-#: pack/wolf-albums/inc/admin/wa-admin-functions.php:26
 msgid "Albums Page"
 msgstr ""
 
 #: inc/admin/class-wa-options.php:68
-#: pack/wolf-albums/inc/admin/class-wa-options.php:68
 msgid "Albums Item Name"
 msgstr ""
 
 #: inc/admin/class-wa-options.php:69
-#: pack/wolf-albums/inc/admin/class-wa-options.php:69
 msgid "Albums Item Slug"
 msgstr ""
 
 #: inc/admin/class-wa-options.php:71
-#: pack/wolf-albums/inc/admin/class-wa-options.php:71
 msgid "Max number of column"
 msgstr ""
 
 #: inc/admin/class-wa-options.php:110
-#: pack/wolf-albums/inc/admin/class-wa-options.php:110
 msgid "- Disabled -"
 msgstr ""
 
 #: inc/admin/class-wa-options.php:123
-#: pack/wolf-albums/inc/admin/class-wa-options.php:123
 msgid "Select a page..."
 msgstr ""
 
 #: inc/admin/class-wa-options.php:162 inc/admin/class-wa-options.php:177
-#: pack/wolf-albums/inc/admin/class-wa-options.php:162
-#: pack/wolf-albums/inc/admin/class-wa-options.php:177
 msgid "Number of column on desktop screen"
 msgstr ""
 
 #: inc/admin/class-wa-options.php:188
-#: pack/wolf-albums/inc/admin/class-wa-options.php:188
 msgid "Albums Settings"
 msgstr ""
 
 #: inc/admin/class-wa-options.php:191
-#: pack/wolf-albums/inc/admin/class-wa-options.php:191
 msgid "Settings saved."
 msgstr ""
 
 #: inc/admin/class-wa-options.php:197
-#: pack/wolf-albums/inc/admin/class-wa-options.php:197
 msgid "Save Changes"
 msgstr ""
 
 #: inc/admin/class-wa-options.php:210
-#: pack/wolf-albums/inc/admin/class-wa-options.php:210
 msgid "Albums Shortcode"
 msgstr ""
 
 #: inc/admin/class-wa-options.php:211
-#: pack/wolf-albums/inc/admin/class-wa-options.php:211
 msgid ""
 "To display your last albums in your post or page you can use the following "
 "shortcode."
 msgstr ""
 
 #: inc/admin/class-wa-options.php:213
-#: pack/wolf-albums/inc/admin/class-wa-options.php:213
 msgid "Additionally, you can add a count and/or a category attribute."
 msgstr ""
 
 #: inc/admin/class-wa-options.php:216
-#: pack/wolf-albums/inc/admin/class-wa-options.php:216
 msgid "You can also add a column count attribute."
 msgstr ""
 
-#: inc/admin/updater.php:434 pack/wolf-albums/inc/admin/updater.php:434
+#: inc/admin/updater.php:434
 msgid ""
 "The plugin has been updated, but could not be reactivated. Please "
 "reactivate it manually."
 msgstr ""
 
-#: inc/admin/updater.php:435 pack/wolf-albums/inc/admin/updater.php:435
+#: inc/admin/updater.php:435
 msgid "Plugin reactivated successfully."
 msgstr ""
 
-#: inc/admin/wa-metaboxes.php:15 pack/wolf-albums/inc/admin/wa-metaboxes.php:15
+#: inc/admin/wa-metaboxes.php:15
 msgid "Album option"
 msgstr ""
 
-#: inc/admin/wa-metaboxes.php:19 pack/wolf-albums/inc/admin/wa-metaboxes.php:19
+#: inc/admin/wa-metaboxes.php:19
 msgid "Cover Image Size"
 msgstr ""
 
-#: inc/admin/wa-metaboxes.php:23 pack/wolf-albums/inc/admin/wa-metaboxes.php:23
+#: inc/admin/wa-metaboxes.php:23
 msgid "Standard"
 msgstr ""
 
-#: inc/admin/wa-metaboxes.php:24 pack/wolf-albums/inc/admin/wa-metaboxes.php:24
+#: inc/admin/wa-metaboxes.php:24
 msgid "Small Square"
 msgstr ""
 
-#: inc/admin/wa-metaboxes.php:25 pack/wolf-albums/inc/admin/wa-metaboxes.php:25
+#: inc/admin/wa-metaboxes.php:25
 msgid "Portrait"
 msgstr ""
 
-#: inc/admin/wa-metaboxes.php:26 pack/wolf-albums/inc/admin/wa-metaboxes.php:26
+#: inc/admin/wa-metaboxes.php:26
 msgid "Landscape"
 msgstr ""
 
-#: inc/admin/wa-metaboxes.php:27 pack/wolf-albums/inc/admin/wa-metaboxes.php:27
+#: inc/admin/wa-metaboxes.php:27
 msgid "Big Square"
 msgstr ""
 
 #: inc/frontend/wa-functions.php:136
 #: inc/widgets/class-wa-widget-last-photos.php:162
-#: pack/wolf-albums/inc/frontend/wa-functions.php:136
 msgid "No photo uploaded yet."
 msgstr ""
 
 #: inc/wa-register-post-type.php:15 inc/wa-register-post-type.php:27
-#: pack/wolf-albums/inc/wa-register-post-type.php:15
-#: pack/wolf-albums/inc/wa-register-post-type.php:27
 msgid "Galleries"
 msgstr ""
 
 #: inc/wa-register-post-type.php:16
-#: pack/wolf-albums/inc/wa-register-post-type.php:16
 msgid "Gallery"
 msgstr ""
 
 #: inc/wa-register-post-type.php:17
-#: pack/wolf-albums/inc/wa-register-post-type.php:17
 msgid "Add New"
 msgstr ""
 
 #: inc/wa-register-post-type.php:18
-#: pack/wolf-albums/inc/wa-register-post-type.php:18
 msgid "Add New Gallery"
 msgstr ""
 
 #: inc/wa-register-post-type.php:19
-#: pack/wolf-albums/inc/wa-register-post-type.php:19
 msgid "All Galleries"
 msgstr ""
 
 #: inc/wa-register-post-type.php:20
-#: pack/wolf-albums/inc/wa-register-post-type.php:20
 msgid "Edit Gallery"
 msgstr ""
 
 #: inc/wa-register-post-type.php:21
-#: pack/wolf-albums/inc/wa-register-post-type.php:21
 msgid "New Gallery"
 msgstr ""
 
-#: inc/wa-register-post-type.php:22
-#: pack/wolf-albums/inc/wa-register-post-type.php:22
-#: pack/wolf-albums/templates/content-album.php:33
-#: templates/content-album.php:33
+#: inc/wa-register-post-type.php:22 templates/content-album.php:33
 msgid "View Gallery"
 msgstr ""
 
 #: inc/wa-register-post-type.php:23
-#: pack/wolf-albums/inc/wa-register-post-type.php:23
 msgid "Search Galleries"
 msgstr ""
 
 #: inc/wa-register-post-type.php:24
-#: pack/wolf-albums/inc/wa-register-post-type.php:24
 msgid "No Galleries found"
 msgstr ""
 
 #: inc/wa-register-post-type.php:25
-#: pack/wolf-albums/inc/wa-register-post-type.php:25
 msgid "No Galleries found in Trash"
 msgstr ""
 
 #: inc/wa-register-post-type.php:45
-#: pack/wolf-albums/inc/wa-register-post-type.php:45
 msgid "Present your albums"
 msgstr ""
 
 #: inc/wa-register-taxonomy.php:15
-#: pack/wolf-albums/inc/wa-register-taxonomy.php:15
 msgid "Galleries Categories"
 msgstr ""
 
 #: inc/wa-register-taxonomy.php:16
-#: pack/wolf-albums/inc/wa-register-taxonomy.php:16
 msgid "Galleries Category"
 msgstr ""
 
 #: inc/wa-register-taxonomy.php:17
-#: pack/wolf-albums/inc/wa-register-taxonomy.php:17
 msgid "Search Galleries Categories"
 msgstr ""
 
 #: inc/wa-register-taxonomy.php:18
-#: pack/wolf-albums/inc/wa-register-taxonomy.php:18
 msgid "Popular Galleries Categories"
 msgstr ""
 
 #: inc/wa-register-taxonomy.php:19
-#: pack/wolf-albums/inc/wa-register-taxonomy.php:19
 msgid "All Galleries Categories"
 msgstr ""
 
 #: inc/wa-register-taxonomy.php:20
-#: pack/wolf-albums/inc/wa-register-taxonomy.php:20
 msgid "Parent Galleries Category"
 msgstr ""
 
 #: inc/wa-register-taxonomy.php:21
-#: pack/wolf-albums/inc/wa-register-taxonomy.php:21
 msgid "Parent Galleries Category:"
 msgstr ""
 
 #: inc/wa-register-taxonomy.php:22
-#: pack/wolf-albums/inc/wa-register-taxonomy.php:22
 msgid "Edit Galleries Category"
 msgstr ""
 
 #: inc/wa-register-taxonomy.php:23
-#: pack/wolf-albums/inc/wa-register-taxonomy.php:23
 msgid "Update Galleries Category"
 msgstr ""
 
 #: inc/wa-register-taxonomy.php:24
-#: pack/wolf-albums/inc/wa-register-taxonomy.php:24
 msgid "Add New Galleries Category"
 msgstr ""
 
 #: inc/wa-register-taxonomy.php:25
-#: pack/wolf-albums/inc/wa-register-taxonomy.php:25
 msgid "New Galleries Category"
 msgstr ""
 
 #: inc/wa-register-taxonomy.php:26
-#: pack/wolf-albums/inc/wa-register-taxonomy.php:26
 msgid "Separate gallery categories with commas"
 msgstr ""
 
 #: inc/wa-register-taxonomy.php:27
-#: pack/wolf-albums/inc/wa-register-taxonomy.php:27
 msgid "Add or remove gallery categories"
 msgstr ""
 
 #: inc/wa-register-taxonomy.php:28
-#: pack/wolf-albums/inc/wa-register-taxonomy.php:28
 msgid "Choose from the most used gallery categories"
 msgstr ""
 
 #: inc/wa-register-taxonomy.php:29
-#: pack/wolf-albums/inc/wa-register-taxonomy.php:29
 msgid "No categories found"
 msgstr ""
 
 #: inc/wa-register-taxonomy.php:30
-#: pack/wolf-albums/inc/wa-register-taxonomy.php:30
 msgid "Categories"
 msgstr ""
 
 #: inc/widgets/class-wa-widget-last-photos.php:24
-#: pack/wolf-albums/inc/widgets/class-wa-widget-last-photos.php:24
 msgid "Display your last photos"
 msgstr ""
 
 #: inc/widgets/class-wa-widget-last-photos.php:27
 #: inc/widgets/class-wa-widget-last-photos.php:85
-#: pack/wolf-albums/inc/widgets/class-wa-widget-last-photos.php:27
-#: pack/wolf-albums/inc/widgets/class-wa-widget-last-photos.php:85
 msgid "Last Photos"
 msgstr ""
 
 #: inc/widgets/class-wa-widget-last-photos.php:92
-#: pack/wolf-albums/inc/widgets/class-wa-widget-last-photos.php:92
 msgid "Title"
 msgstr ""
 
 #: inc/widgets/class-wa-widget-last-photos.php:96
-#: pack/wolf-albums/inc/widgets/class-wa-widget-last-photos.php:96
 msgid "Optional Text"
 msgstr ""
 
 #: inc/widgets/class-wa-widget-last-photos.php:100
-#: pack/wolf-albums/inc/widgets/class-wa-widget-last-photos.php:100
 msgid "Count"
 msgstr ""
 
-#: pack/wolf-albums/templates/filter.php:27 templates/filter.php:27
+#: templates/filter.php:27
 msgid "All"
 msgstr ""
 
-#: pack/wolf-albums/templates/loop/no-album-found.php:12
 #: templates/loop/no-album-found.php:12
 msgid "Nothing found"
 msgstr ""
 
-#: pack/wolf-albums/wolf-albums.php:108 wolf-albums.php:108
+#: wolf-albums.php:108
 msgid ""
 "%1$s needs at least PHP %2$s installed on your server. You have version "
 "%3$s currently installed. Please contact your hosting service provider if "
@@ -624,13 +515,11 @@ msgid "String"
 msgstr ""
 
 #: inc/frontend/wa-functions.php:164
-#: pack/wolf-albums/inc/frontend/wa-functions.php:164
 msgctxt "Previous post link"
 msgid "<span class=\"meta-nav\">&larr;</span> %title"
 msgstr ""
 
 #: inc/frontend/wa-functions.php:165
-#: pack/wolf-albums/inc/frontend/wa-functions.php:165
 msgctxt "Next post link"
 msgid "%title <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
